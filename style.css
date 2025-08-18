@@ -1,0 +1,83 @@
+/* 全局样式 */
+body {
+    font-family: "Noto Sans SC", "Arial", sans-serif;
+    margin: 0;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+/* 导航栏 */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    z-index: 1000;
+}
+header nav ul {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    padding: 10px;
+    margin: 0;
+}
+header nav ul li {
+    margin: 0 15px;
+}
+header nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+/* 分区 */
+section {
+    padding: 100px 20px 60px;
+    max-width: 900px;
+    margin: auto;
+}
+section h2 {
+    border-bottom: 2px solid #333;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+/* 首页 */
+.hero {
+    text-align: center;
+    padding-top: 150px;
+}
+.hero-photo {
+    width: 150px;
+    height: 180px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+.hero h1 {
+    font-size: 2.5em;
+    margin: 15px 0;
+}
+.hero p {
+    font-size: 1.1em;
+    color: #555;
+}
+.social-links a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #0073e6;
+}
+
+/* 内容区 */
+.content ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #f4f4f4;
+    color: #555;
+}
