@@ -23,7 +23,7 @@ header nav ul {
     margin: 0;
 }
 header nav ul li {
-    margin: 0 15px;
+    margin: 0 8px;
 }
 header nav ul li a {
     text-decoration: none;
@@ -62,16 +62,71 @@ section h2 {
     font-size: 1.1em;
     color: #555;
 }
+.social-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 5px;
+}
 .social-links a {
-    margin: 0 10px;
+    margin: 0 5px;
     text-decoration: none;
     color: #0073e6;
+}
+.social-links span {
+    margin: 0 5px;
+    color: #666;
 }
 
 /* 内容区 */
 .content ul {
     list-style-type: disc;
     padding-left: 20px;
+}
+
+/* 论文样式 */
+.publication-item {
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+.publication-item:last-child {
+    border-bottom: none;
+}
+.publication-item .authors {
+    font-size: 0.9em;
+    color: #666;
+    margin-top: 5px;
+    font-style: italic;
+}
+
+/* 科研经历样式 */
+.research-entry {
+    margin-bottom: 30px;
+}
+.research-entry .position {
+    color: #666;
+    font-size: 0.95em;
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+/* 项目样式 */
+.project-item {
+    margin-bottom: 25px;
+}
+.project-item h3 {
+    color: #333;
+    margin-bottom: 8px;
+}
+.project-item .project-meta {
+    color: #666;
+    font-size: 0.9em;
+    margin-bottom: 5px;
+}
+.project-item ul {
+    margin-top: 10px;
 }
 
 /* Footer */
