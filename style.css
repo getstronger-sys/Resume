@@ -100,6 +100,20 @@ section h2 {
     margin-top: 5px;
     font-style: italic;
 }
+.publication-item .authors sup {
+    font-size: 0.8em;
+    vertical-align: super;
+}
+.publication-note {
+    font-size: 0.85em;
+    color: #888;
+    margin-top: 10px;
+    font-style: italic;
+}
+.publication-note sup {
+    font-size: 0.9em;
+    vertical-align: super;
+}
 
 /* 科研经历样式 */
 .research-entry {
