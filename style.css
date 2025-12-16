@@ -114,6 +114,11 @@ section h2 {
     font-size: 0.9em;
     vertical-align: super;
 }
+.publication-note-small {
+    font-size: 0.85em;
+    color: #999;
+    font-style: italic;
+}
 
 /* 科研经历样式 */
 .research-entry {
