@@ -17,3 +17,25 @@ window.addEventListener("scroll", () => {
         }
     });
 });
+
+// 图片模态框功能
+function openModal(img) {
+    const modal = document.getElementById("imageModal");
+    const modalImg = document.getElementById("modalImage");
+    modal.style.display = "block";
+    modalImg.src = img.src;
+}
+
+// 关闭模态框
+const modal = document.getElementById("imageModal");
+const closeBtn = document.querySelector(".close");
+
+closeBtn.onclick = function() {
+    modal.style.display = "none";
+}
+
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}

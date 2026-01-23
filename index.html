@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>李炜仪的个人主页</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <!-- 导航栏 -->
@@ -49,8 +50,122 @@
             <ul>
                 <li>GPA: 3.87/4.0 | 加权平均分: 93.21/100</li>
                 <li>专业排名: 3/96（3.1%）</li>
-                <li>优势课程: 高等数学(<strong>99</strong>)、数据结构(<strong>98</strong>)、数字电路设计(<strong>97</strong>)、形式语言与自动机(<strong>98</strong>)、数据结构与算法课程设计(<strong>97</strong>)、人工智能导论(<strong>95</strong>)、Java 高级程序设计(<strong>95</strong>)、计算导论与程序设计课程设计(<strong>100</strong>)、电子系统基础(<strong>96</strong>)、离散数学(<strong>96</strong>)、线性代数(<strong>95</strong>)</li>
             </ul>
+            
+            <!-- 优势课程表格 -->
+            <div class="courses-container">
+                <h3>优势课程</h3>
+                <div class="courses-table-wrapper">
+                    <table class="courses-table">
+                        <thead>
+                            <tr>
+                                <th>课程名称</th>
+                                <th>课程性质</th>
+                                <th>成绩</th>
+                                <th>学分</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>计算导论与程序设计课程设计</td>
+                                <td>必修</td>
+                                <td class="score-highlight">100</td>
+                                <td>1.5</td>
+                            </tr>
+                            <tr>
+                                <td>高等数学A(上)</td>
+                                <td>必修</td>
+                                <td class="score-highlight">99</td>
+                                <td>5</td>
+                            </tr>
+                            <tr>
+                                <td>数据结构</td>
+                                <td>必修</td>
+                                <td class="score-highlight">98</td>
+                                <td>4</td>
+                            </tr>
+                            <tr>
+                                <td>形式语言与自动机</td>
+                                <td>必修</td>
+                                <td class="score-highlight">98</td>
+                                <td>2</td>
+                            </tr>
+                            <tr>
+                                <td>Python程序设计</td>
+                                <td>选修</td>
+                                <td class="score-highlight">98</td>
+                                <td>2</td>
+                            </tr>
+                            <tr>
+                                <td>数字电路设计</td>
+                                <td>必修</td>
+                                <td class="score-highlight">97</td>
+                                <td>3</td>
+                            </tr>
+                            <tr>
+                                <td>数据结构与算法课程设计</td>
+                                <td>必修</td>
+                                <td class="score-highlight">97</td>
+                                <td>2</td>
+                            </tr>
+                            <tr>
+                                <td>Design & Build 实训(智能)</td>
+                                <td>必修</td>
+                                <td class="score-highlight">97</td>
+                                <td>2</td>
+                            </tr>
+                            <tr>
+                                <td>电子系统基础</td>
+                                <td>必修</td>
+                                <td class="score-highlight">96</td>
+                                <td>3</td>
+                            </tr>
+                            <tr>
+                                <td>离散数学</td>
+                                <td>必修</td>
+                                <td class="score-highlight">96</td>
+                                <td>4</td>
+                            </tr>
+                            <tr>
+                                <td>人工智能导论</td>
+                                <td>必修</td>
+                                <td class="score-highlight">96</td>
+                                <td>2.5</td>
+                            </tr>
+                            <tr>
+                                <td>产品开发与管理</td>
+                                <td>必修</td>
+                                <td class="score-highlight">96</td>
+                                <td>2.5</td>
+                            </tr>
+                            <tr>
+                                <td>概率论与数理统计</td>
+                                <td>必修</td>
+                                <td class="score-highlight">96</td>
+                                <td>3</td>
+                            </tr>
+                            <tr>
+                                <td>JAVA高级语言程序设计</td>
+                                <td>必修</td>
+                                <td class="score-highlight">95</td>
+                                <td>3</td>
+                            </tr>
+                            <tr>
+                                <td>线性代数</td>
+                                <td>必修</td>
+                                <td class="score-highlight">95</td>
+                                <td>3</td>
+                            </tr>
+                            <tr>
+                                <td>数据库系统</td>
+                                <td>必修</td>
+                                <td class="score-highlight">95</td>
+                                <td>3.5</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -58,23 +173,156 @@
     <section id="publications">
         <h2>论文</h2>
         <div class="content">
-            <div class="publication-item">
-                <p><strong>Stylistic Idiosyncrasies of Code Generated by Large Language Models</strong>, Under Review | CSCWD 2026</p>
-                <p class="authors"><strong>Weiyi Li</strong>, Zezhong Chen, Jiang Fang<sup>†</sup>, Xuhong Zuo, Jiyan Sun<sup>†</sup>.</p>
+            <div class="publication-note" style="margin-bottom: 20px;">
+                <sup>*</sup> Equal contribution; <sup>†</sup> Corresponding author
             </div>
-            <div class="publication-item">
-                <p><strong>SAT4RIDS: Self-Supervised Learning Adversarial Training Framework for Robust Network Intrusion Detection System</strong>, Under Review | CSCWD 2026</p>
-                <p class="authors"><strong>Weiyi Li</strong><sup>*</sup>, <strong>Jiadong Fu</strong><sup>*</sup>, Jiang Fang<sup>†</sup>, Xuhong Zuo, Liru Geng<sup>†</sup>.</p>
+            
+            <!-- 论文卡片列表 -->
+            <div class="publications-grid">
+                <!-- CGSD -->
+                <div class="publication-card">
+                    <div class="publication-image" onclick="openModal(this.querySelector('img'))">
+                        <img src="images/学术成果/介绍页/CGSD.jpg" alt="CGSD">
+                    </div>
+                    <div class="publication-content">
+                        <div class="publication-header">
+                            <span class="conference-badge">CSCWD 2026</span>
+                            <span class="status-badge">Under Review</span>
+                        </div>
+                        <h3 class="publication-title">Stylistic Idiosyncrasies of Code Generated by Large Language Models</h3>
+                        <p class="publication-authors"><strong>Weiyi Li</strong>, Zezhong Chen, Jiang Fang<sup>†</sup>, Xuhong Zuo, Jiyan Sun<sup>†</sup>.</p>
+                        <div class="publication-buttons">
+                            <a href="images/学术成果/Code_Classification__CSCWD.pdf" target="_blank" class="btn-pdf"><i class="fas fa-file-pdf"></i> PDF</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SAT4RIDS -->
+                <div class="publication-card">
+                    <div class="publication-image" onclick="openModal(this.querySelector('img'))">
+                        <img src="images/学术成果/介绍页/SAT4RIDS.png" alt="SAT4RIDS">
+                    </div>
+                    <div class="publication-content">
+                        <div class="publication-header">
+                            <span class="conference-badge">CSCWD 2026</span>
+                            <span class="status-badge">Under Review</span>
+                        </div>
+                        <h3 class="publication-title">SAT4RIDS: Self-Supervised Learning Adversarial Training Framework for Robust Network Intrusion Detection System</h3>
+                        <p class="publication-authors"><strong>Weiyi Li</strong><sup>*</sup>, <strong>Jiadong Fu</strong><sup>*</sup>, Jiang Fang<sup>†</sup>, Xuhong Zuo, Liru Geng<sup>†</sup>.</p>
+                        <div class="publication-buttons">
+                            <a href="images/学术成果/SAT4RIDS_CSCWD.pdf" target="_blank" class="btn-pdf"><i class="fas fa-file-pdf"></i> PDF</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Signal-SGN++ -->
+                <div class="publication-card">
+                    <div class="publication-image" onclick="openModal(this.querySelector('img'))">
+                        <img src="images/学术成果/介绍页/Signal-SGN++.png" alt="Signal-SGN++">
+                    </div>
+                    <div class="publication-content">
+                        <div class="publication-header">
+                            <span class="conference-badge">IEEE TNNLS</span>
+                            <span class="status-badge">Under Review</span>
+                        </div>
+                        <h3 class="publication-title">Signal-SGN++: Topology-Enhanced Time–Frequency Spiking Graph Network for Skeleton-Based Action Recognition</h3>
+                        <p class="publication-authors">Naichuan Zheng, Hailun Xia<sup>†</sup>, <strong>Weiyi Li</strong>. <span class="publication-note-small">Extended from ACM MM 2025 (CCF-A), Accepted</span></p>
+                        <div class="publication-buttons">
+                            <a href="images/学术成果/signal-SGN++.pdf" target="_blank" class="btn-pdf"><i class="fas fa-file-pdf"></i> PDF</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SNN-Driven -->
+                <div class="publication-card">
+                    <div class="publication-image" onclick="openModal(this.querySelector('img'))">
+                        <img src="images/学术成果/介绍页/SNN-Driven.png" alt="SNN-Driven">
+                    </div>
+                    <div class="publication-content">
+                        <div class="publication-header">
+                            <span class="conference-badge">IJCAI 2026</span>
+                            <span class="status-badge">Under Review</span>
+                        </div>
+                        <h3 class="publication-title">SNN-Driven Multimodal Human Action Recognition via Sparse Spatial-Temporal Data Fusion</h3>
+                        <p class="publication-authors">Naichuan Zheng, Hailun Xia, Zeyu Liang, Duyuchen Du, <strong>Weiyi Li</strong>.</p>
+                        <div class="publication-buttons">
+                            <a href="#" class="btn-pdf"><i class="fas fa-file-pdf"></i> PDF</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- VideoCD -->
+                <div class="publication-card">
+                    <div class="publication-image" onclick="openModal(this.querySelector('img'))">
+                        <img src="images/学术成果/介绍页/videoCD.png" alt="VideoCD" style="object-fit: contain;">
+                    </div>
+                    <div class="publication-content">
+                        <div class="publication-header">
+                            <span class="conference-badge">Manuscript</span>
+                            <span class="status-badge">In Preparation</span>
+                        </div>
+                        <h3 class="publication-title">VideoCD: Contrastive Decoding with Reinforcement Learning for Enhancing Video Temporal Understanding in Video-LLMs</h3>
+                        <p class="publication-authors">Zhenyan Chen, Yuqi Pan, Sicong Leng, Guoshun Nan, Jiade Wang, <strong>Weiyi Li</strong>, Ruikai Xiao, Wang Xiao, Xiongjie Tang, Zihua Rong, Chenyang Wang, Hua Wang, Xudong Jiang.</p>
+                        <div class="publication-buttons">
+                            <a href="images/学术成果/videoCD.pdf" target="_blank" class="btn-pdf"><i class="fas fa-file-pdf"></i> PDF</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 6G Smart Factories -->
+                <div class="publication-card">
+                    <div class="publication-image" onclick="openModal(this.querySelector('img'))">
+                        <img src="images/学术成果/介绍页/6G.png" alt="6G Smart Factories">
+                    </div>
+                    <div class="publication-content">
+                        <div class="publication-header">
+                            <span class="conference-badge">Manuscript</span>
+                            <span class="status-badge">Prepared</span>
+                        </div>
+                        <h3 class="publication-title">LLM Multi-agents for Efficient Security in 6G Smart Factories</h3>
+                        <p class="publication-authors">Xiaosu Xue, Guoshun Nan, Hang Cui*, <strong>Weiyi Li*</strong>, Chubin Zhang, Junzheng Wang, Xintong Li, Jianlong Ban, Yanqiu Zhao, Min Lei, Qimei Cui and Xiaofeng Tao.</p>
+                        <div class="publication-buttons">
+                            <a href="images/学术成果/JSAC2025-Energy投稿作品.pdf" target="_blank" class="btn-pdf"><i class="fas fa-file-pdf"></i> PDF</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Technology-Driven Sports Digital Twin -->
+                <div class="publication-card">
+                    <div class="publication-image" onclick="openModal(this.querySelector('img'))">
+                        <img src="images/学术成果/介绍页/Technology-Driven Sports Digital Twin.png" alt="Technology-Driven Sports Digital Twin">
+                    </div>
+                    <div class="publication-content">
+                        <div class="publication-header">
+                            <span class="conference-badge">IET MIC</span>
+                            <span class="status-badge">Best Poster</span>
+                        </div>
+                        <h3 class="publication-title">Technology-Driven Sports Digital Twin: Human-Machine Collaborative Olympic Strategic Decision System</h3>
+                        <p class="publication-authors"><strong>Weiyi Li</strong> et al.</p>
+                        <div class="publication-buttons">
+                            <a href="images/学术成果/MIC优秀论文.pdf" target="_blank" class="btn-pdf"><i class="fas fa-file-pdf"></i> PDF</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 智体无界 -->
+                <div class="publication-card">
+                    <div class="publication-image" onclick="openModal(this.querySelector('img'))">
+                        <img src="images/学术成果/介绍页/智体无界.png" alt="智体无界">
+                    </div>
+                    <div class="publication-content">
+                        <div class="publication-header">
+                            <span class="conference-badge">国创赛</span>
+                            <span class="status-badge">铜奖</span>
+                        </div>
+                        <h3 class="publication-title">智体无界 — 基于类脑架构的运动智能体</h3>
+                        <p class="publication-authors"><strong>Weiyi Li</strong> et al.</p>
+                        <div class="publication-buttons">
+                            <a href="images/学术成果/国创赛智体无界.pdf" target="_blank" class="btn-pdf"><i class="fas fa-file-pdf"></i> PDF</a>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="publication-item">
-                <p><strong>Signal-SGN++: Topology-Enhanced Time–Frequency Spiking Graph Network for Skeleton-Based Action Recognition</strong>, Under Review | IEEE TNNLS</p>
-                <p class="authors">Naichuan Zheng, Hailun Xia<sup>†</sup>, <strong>Weiyi Li</strong>. <span class="publication-note-small">Extended from ACM MM 2025 (CCF-A), Accepted</span></p>
-            </div>
-            <div class="publication-item">
-                <p><strong>VideoCD: Contrastive Decoding with Reinforcement Learning for Enhancing Video Temporal Understanding in Video-LLMs</strong>, Manuscript in preparation</p>
-                <p class="authors">Zhenyan Chen, Yuqi Pan, Sicong Leng, Guoshun Nan, Jiade Wang, <strong>Weiyi Li</strong>, Ruikai Xiao, Wang Xiao, Xiongjie Tang, Zihua Rong, Chenyang Wang, Hua Wang, Xudong Jiang.</p>
-            </div>
-            <p class="publication-note"><sup>*</sup> Equal contribution; <sup>†</sup> Corresponding author</p>
         </div>
     </section>
 
@@ -121,14 +369,26 @@
 
     <!-- 竞赛 -->
     <section id="competitions">
-        <h2>竞赛</h2>
+        <h2><i class="fas fa-trophy"></i> 竞赛</h2>
         <div class="content">
-            <ul>
-                <li>2024 全国大学生数学竞赛一等奖</li>
-                <li>2025 全国大学生数学建模竞赛国家二等奖</li>
-                <li>2024 首届高校ICT产教融合创新大赛二等奖</li>
-                <li>2024 全国大学生英语竞赛三等奖</li>
-            </ul>
+            <div class="competition-list">
+                <div class="competition-item">
+                    <i class="fas fa-medal" style="color: #FFD700;"></i>
+                    <span>2024 全国大学生数学竞赛一等奖</span>
+                </div>
+                <div class="competition-item">
+                    <i class="fas fa-medal" style="color: #C0C0C0;"></i>
+                    <span>2025 全国大学生数学建模竞赛国家二等奖</span>
+                </div>
+                <div class="competition-item">
+                    <i class="fas fa-medal" style="color: #CD7F32;"></i>
+                    <span>2024 首届高校ICT产教融合创新大赛二等奖</span>
+                </div>
+                <div class="competition-item">
+                    <i class="fas fa-medal" style="color: #CD7F32;"></i>
+                    <span>2024 全国大学生英语竞赛三等奖</span>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -171,8 +431,8 @@
             </div>
             
             <div class="research-entry">
-                <p><strong>清华大学交叉信息研究院– 决策智能实验室</strong> (2025.09 -- 至今)</p>
-                <p class="position">本科实习生 | 导师：黄隆波教授</p>
+                <p><strong>中科院自动化所-复杂系统认知与决策重点实验室</strong> (2026.01 -- 至今)</p>
+                <p class="position">本科实习生 | 导师：黄凯奇教授</p>
             </div>
         </div>
     </section>
@@ -181,25 +441,96 @@
     <section id="skills">
         <h2>专业能力</h2>
         <div class="content">
-            <ul>
-                <li>编程语言：掌握C/C++及其EasyX图形库、Python、Java；熟悉 SQL/HTML/CSS/JavaScript。</li>
-                <li>计算机基础：常用数据结构与算法、数据库技术与设计、Git版本管理。</li>
-                <li>AI/机器学习：熟练使用Python核心库、掌握模型微调技术、熟悉CNN/RNN/Transformer。</li>
-                <li>其他技能：熟练使用LaTeX、熟悉达芬奇剪辑与调色。</li>
-            </ul>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <i class="fas fa-code"></i>
+                    <h3>编程语言</h3>
+                    <p>C/C++、Python、Java<br>SQL、HTML/CSS/JavaScript</p>
+                </div>
+                <div class="skill-item">
+                    <i class="fas fa-database"></i>
+                    <h3>计算机基础</h3>
+                    <p>数据结构与算法<br>数据库技术、Git版本管理</p>
+                </div>
+                <div class="skill-item">
+                    <i class="fas fa-brain"></i>
+                    <h3>AI/机器学习</h3>
+                    <p>Python核心库<br>模型微调、CNN/RNN/Transformer</p>
+                </div>
+                <div class="skill-item">
+                    <i class="fas fa-tools"></i>
+                    <h3>其他技能</h3>
+                    <p>LaTeX、达芬奇剪辑与调色</p>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- 荣誉 -->
     <section id="honors">
-        <h2>荣誉</h2>
+        <h2><i class="fas fa-award"></i> 荣誉</h2>
         <div class="content">
-            <ul>
-                <li>国家一等奖学金（2023-2024，2024-2025）</li>
-                <li>三好学生（2023-2024）优秀学生干部（2024-2025）</li>
-                <li>北京邮电大学优秀团员（2023-2024，2024-2025）</li>
-                <li>成功入选2024 Winter trip，赴英国交流学习</li>
-            </ul>
+            <div class="honor-list">
+                <div class="honor-item">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span>国家奖学金（2023-2024，2024-2025）</span>
+                </div>
+                <div class="honor-item">
+                    <i class="fas fa-star"></i>
+                    <span>三好学生（2023-2024）优秀学生干部（2024-2025）</span>
+                </div>
+                <div class="honor-item">
+                    <i class="fas fa-star"></i>
+                    <span>北京市三好学生（2025-2026）</span>
+                </div>
+                <div class="honor-item">
+                    <i class="fas fa-user-graduate"></i>
+                    <span>北京邮电大学优秀团员（2023-2024，2024-2025）</span>
+                </div>
+                <div class="honor-item">
+                    <i class="fas fa-plane"></i>
+                    <span>成功入选2024 Winter trip，赴英国交流学习</span>
+                </div>
+            </div>
+            
+            <!-- 证书展示 -->
+            <div class="certificates-gallery">
+                <h3><i class="fas fa-certificate"></i> 获奖证书</h3>
+                <div class="gallery-grid">
+                    <div class="certificate-item">
+                        <img src="images/获奖证书/照片版/国奖.png" alt="国家奖学金证书" onclick="openModal(this)">
+                        <p>国家奖学金证书</p>
+                    </div>
+                    <div class="certificate-item">
+                        <img src="images/获奖证书/照片版/国数竞.jpg" alt="全国大学生数学竞赛一等奖" onclick="openModal(this)">
+                        <p>全国大学生数学竞赛一等奖</p>
+                    </div>
+                    <div class="certificate-item">
+                        <img src="images/获奖证书/照片版/国二数模.png" alt="全国大学生数学建模竞赛国家二等奖" onclick="openModal(this)">
+                        <p>全国大学生数学建模竞赛国家二等奖</p>
+                    </div>
+                    <div class="certificate-item">
+                        <img src="images/获奖证书/照片版/大英赛.jpg" alt="全国大学生英语竞赛三等奖" onclick="openModal(this)">
+                        <p>全国大学生英语竞赛三等奖</p>
+                    </div>
+                    <div class="certificate-item">
+                        <img src="images/获奖证书/照片版/IET.png" alt="IET MIC最佳海报奖与优秀论文" onclick="openModal(this)">
+                        <p>IET MIC最佳海报奖与优秀论文</p>
+                    </div>
+                    <div class="certificate-item">
+                        <img src="images/获奖证书/照片版/市数竞.jpg" alt="市级数学竞赛" onclick="openModal(this)">
+                        <p>市级数学竞赛</p>
+                    </div>
+                    <div class="certificate-item">
+                        <img src="images/获奖证书/照片版/省级数模.png" alt="省级数学建模竞赛" onclick="openModal(this)">
+                        <p>省级数学建模竞赛</p>
+                    </div>
+                    <div class="certificate-item">
+                        <img src="images/获奖证书/照片版/优秀班集体.jpg" alt="优秀班集体" onclick="openModal(this)">
+                        <p>优秀班集体</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -209,7 +540,7 @@
         <div class="content">
             <ul>
                 <li><strong>学生工作与思想政治：</strong>中国共产党预备党员；团支部书记和班长，多次评选为优秀团支部；校级学生代表，联署提案并多次参与学生代表大会。</li>
-                <li><strong>实践经历：实习与志愿服务：</strong>科大讯飞实习，数学AI模型训练与优化；志愿服务时长累计129小时。</li>
+                <li><strong>实践经历：实习与志愿服务：</strong>科大讯飞实习，数学AI模型训练与优化；志愿服务时长累计161小时。</li>
             </ul>
         </div>
     </section>
@@ -217,14 +548,42 @@
     <!-- 联系方式 -->
     <section id="contact">
         <h2>联系我</h2>
-        <p>Email: liweiyi@bupt.edu.cn</p>
-        <p>电话: 17201573086</p>
-        <p>GitHub: <a href="https://github.com/getstronger-sys" target="_blank">github.com/getstronger-sys</a></p>
+        <div class="contact-icons">
+            <a href="mailto:liweiyi@bupt.edu.cn" class="contact-item">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <polyline points="22,6 12,13 2,6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span>liweiyi@bupt.edu.cn</span>
+            </a>
+            <a href="tel:17201573086" class="contact-item">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span>17201573086</span>
+            </a>
+            <a href="https://github.com/getstronger-sys" target="_blank" class="contact-item">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                </svg>
+                <span>GitHub</span>
+            </a>
+            <a href="https://space.bilibili.com/1363638998" target="_blank" class="contact-item">
+                <img src="images/bilibili.png" alt="bilibili" style="width: 24px; height: 24px; object-fit: contain;">
+                <span>bilibili</span>
+            </a>
+        </div>
     </section>
 
     <footer>
         <p>&copy; 2025 李炜仪 | 最后更新: 2025-01-27</p>
     </footer>
+
+    <!-- 图片模态框 -->
+    <div id="imageModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
 
     <script src="script.js"></script>
 </body>

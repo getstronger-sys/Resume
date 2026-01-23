@@ -1,0 +1,322 @@
+\documentclass[conference]{IEEEtran}
+\IEEEoverridecommandlockouts
+% The preceding line is only needed to identify funding in the first footnote. If that is unneeded, please comment it out.
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage[colorlinks=true,linkcolor=black,citecolor=black,urlcolor=black]{hyperref}
+\usepackage{float}
+\usepackage{booktabs}
+\usepackage{caption}
+
+\renewcommand{\tablename}{Table}
+\makeatletter
+\def\@IEEEmaketablecaption#1#2{%
+\baselineskip 8pt\relax
+\setbox\@IEEEtablecaptionbox\hbox{\normalfont\footnotesize #1\@IEEEtablecaptionseparator #2}%
+\ifdim\wd\@IEEEtablecaptionbox>\hsize%
+\setbox\@IEEEtablecaptionbox\hbox{\normalfont\footnotesize #1\@IEEEtablecaptionseparator}%
+\parbox[t]{\hsize}{\normalfont\footnotesize \noindent\unhbox\@IEEEtablecaptionbox #2}%
+\else%
+\if@IEEEtablesizebox%
+\box\@IEEEtablecaptionbox%
+\else%
+\global\@IEEEtablesizeboxtrue%
+\box\@IEEEtablecaptionbox%
+\global\@IEEEtablesizeboxfalse%
+\fi%
+\fi}
+\makeatother
+
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+\begin{document}
+
+\title{SAT4RIDS: Self-Supervised Learning Adversarial Training Framework for Robust Network Intrusion Detection System}
+
+% \author{
+% \centering
+% \IEEEauthorblockN{Weiyi Li\textsuperscript{1}, Jiang Fang\textsuperscript{2,3}\textsuperscript{\dag}, Xuhong Zuo\textsuperscript{4}, and Liru Geng\textsuperscript{5}\textsuperscript{\dag}}
+% \IEEEauthorblockA{\textsuperscript{1}\textit{International School of BUPT, Beijing University of Posts and Telecommunications, Beijing, China}}
+% \IEEEauthorblockA{\textsuperscript{2}\textit{Advanced Laser Technology Laboratory of Anhui Province, Electronic Engineering Institute, National University of Defense Technology}}
+% \IEEEauthorblockA{\textsuperscript{3}\textit{Jianghuai Advance Technology Center, Hefei 230037, China}}
+% \IEEEauthorblockA{jiangfang2025@gmail.com}
+% \IEEEauthorblockA{\textsuperscript{4}\textit{School of Law and Criminal Justice East China University of Political Science and Law, Shanghai, China}}
+% \IEEEauthorblockA{2221170089.ecupl@vip.163.com}
+% \IEEEauthorblockA{\textsuperscript{5}\textit{Institute of Information Engineering, Chinese Academy of Sciences, Beijing, China}}
+% \IEEEauthorblockA{sunjiyan@iie.ac.cn}
+% }
+
+\author{
+\IEEEauthorblockN{
+Weiyi Li\textsuperscript{1,*},
+Jiadong Fu\textsuperscript{2,*},
+Jiang Fang\textsuperscript{3,4,\dag},
+Xuhong Zuo\textsuperscript{5},
+Liru Geng\textsuperscript{2,\dag}\thanks{*These authors contributed equally to this work.}\thanks{\dag Corresponding authors.}
+}
+
+\IEEEauthorblockA{
+\textsuperscript{1}\textit{International School of BUPT, Beijing University of Posts and Telecommunications, Beijing, China}\\
+\textsuperscript{2}\textit{Institute of Information Engineering, Chinese Academy of Sciences, Beijing, China}\\
+\textsuperscript{3}\textit{Electronic Engineering Institute, National University of Defense Technology}\\
+\textsuperscript{4}\textit{Jianghuai Advance Technology Center, Hefei, China}\\
+\textsuperscript{5}\textit{School of Law and Criminal Justice, East China University of Political Science and Law, Shanghai, China}
+}
+
+% Emails
+\IEEEauthorblockA{liweiyi@bupt.edu.cn, fujiaodong@iie.ac.cn, jiangfang2025@gmail.com, 2221170089.ecupl@vip.163.com, gengliru@iie.ac.cn}
+}
+
+
+
+\maketitle
+
+\begin{abstract}
+Deep neural network (DNN) models are widely adopted in Network Intrusion Detection Systems (NIDS) but are vulnerable to adversarial attacks. Existing adversarial training methods primarily focus on supervised NIDS models and overlook semantic constraints of network traffic. To address these limitations, this paper proposes SAT4RIDS, a Self-supervised Adversarial Training Framework for Robust Intrusion Detection Systems. SAT4RIDS integrates adversarial training with self-supervised pre-training to learn robust traffic feature representations. We introduce a Packet Header Masking (PHM) method that ensures adversarial samples comply with protocol semantic constraints by applying adversarial perturbations only to the payload portion while preserving protocol-compliant packet headers. Experimental results on two intrusion detection datasets demonstrate that SAT4RIDS achieves state-of-the-art performance, with natural accuracy reaching 99.23\%--99.86\% and adversarial accuracy reaching 86.74\%--87.53\%, effectively defending against adversarial attacks while maintaining detection performance on normal traffic.
+\end{abstract}
+
+\begin{IEEEkeywords}
+network intrusion detection, self-supervised learning, adversarial training, packet header masking
+\end{IEEEkeywords}
+
+\section{Introduction}
+Network Intrusion Detection Systems (NIDS) are crucial tools for safeguarding information systems and networks from various attacks. By monitoring network traffic and system activities in real time, NIDS can swiftly identify and respond to potential security threats \cite{garcia2009anomaly}.
+
+In recent years, deep neural network (DNN) models have been increasingly adopted in NIDS due to their powerful feature extraction and pattern recognition capabilities \cite{vinayakumar2019deep, ferrag2020deep}. Traditionally, NIDS based on DNNs use supervised training, where a single DNN can only perform specific intrusion detection tasks, such as malicious traffic detection or encrypted traffic classification \cite{lotfollahi2020deep}. To enhance the versatility of DNN models, current research is focusing on self-supervised learning (SSL) methods \cite{misra2020self,nakip2024online}. This approach involves pre-training a traffic encoder base model on large volumes of unlabeled network traffic data, followed by fine-tuning the model with a small amount of labeled data for various downstream intrusion detection tasks \cite{yang2022nids}. As a result, the base model can handle multiple different intrusion detection tasks.
+
+However, DNN models are inherently vulnerable to adversarial attacks \cite{szegedy2013intriguing, goodfellow2014explaining}, posing a similar risk to NIDS that utilize these models. Adversarial attacks introduce subtle perturbations to normal traffic, leading to incorrect predictions by NIDS \cite{warnecke2022evaluating}. This not only decreases the detection rate but also allows malicious activities to remain undetected, potentially resulting in severe consequences such as data breaches, financial losses, and damage to corporate reputation. Therefore, enhancing the adversarial robustness of NIDS is a critical direction in current cybersecurity research. This is particularly important for base models trained using self-supervised methods, as their robustness is crucial for the reliability of various intrusion detection tasks.
+
+To address adversarial attacks on Network Intrusion Detection Systems (NIDS), researchers have proposed various defense strategies, such as defensive distillation \cite{papernot2016distillation}, denoising autoencoders \cite{vincent2008extracting}, and adversarial training. These methods have demonstrated effectiveness in network intrusion detection systems. Among them, adversarial training is considered one of the most effective approaches to counter adversarial attacks \cite{madry2018towards}. This method involves generating adversarial examples for the training samples and incorporating them into the training set to optimize encoder model parameters, thereby enhancing the model's robustness against adversarial attacks. However, 1) current research on adversarial training primarily focuses on improving the robustness of supervised NIDS models, with limited attention given to enhancing the robustness of self-supervised NIDS models.
+
+In addition, 2) previous research on adversarial training for NIDS has often overlooked the semantic context of network traffic, typically applying global perturbations to traffic samples \cite{pierazzi2020intriguing}. However, adversarial examples that disregard semantic constraints do not comply with network protocol standards, rendering them incapable of being transmitted to target hosts, and thus meaningless \cite{apruzzese2022position,ennaji2025adversarial}.
+
+To address the aforementioned challenges, this paper proposes integrating the adversarial training process with the pre-training of a self-supervised NIDS base model. We introduce the Self-supervised Adversarial Training Framework for Robust Intrusion Detection Systems (SAT4RIDS) to develop a robust NIDS base model capable of producing resilient traffic representations. Furthermore, to ensure adversarial traffic samples adhere to semantic constraints, we introduce a packet header masking (PHM) method for generating adversarial perturbations. Specifically, the input traffic data is structured into packet headers and payloads. Masking is applied to the protocol-compliant packet headers, while adversarial perturbations are calculated only for the payloads. We validated the effectiveness of the proposed SAT4RIDS method across two different intrusion detection datasets. Experimental results demonstrate that SAT4RIDS achieves exceptional adversarial robustness compared to baseline methods, with natural accuracy reaching 99.23\%--99.86\% and adversarial accuracy reaching 86.74\%--87.53\%, effectively defending against adversarial sample attacks while maintaining detection performance on normal traffic. In summary, the contributions of this paper are as follows:
+\begin{itemize}
+    \item In this paper, we propose a novel adversarial training framework for improving the robustness of intrusion detection systems, called SAT4RIDS. SAT4RIDS combines adversarial training with the pre-training of traffic self-supervised models, allowing the pre-trained self-supervised base model to output robust traffic feature representations.
+    \item To ensure that the generated adversarial samples still meet the semantic constraints of the traffic space, we propose a packet header masking-based method for generating adversarial perturbations in traffic data, applying adversarial perturbations only to the payload portion of the traffic.
+    \item Experimental results show that SAT4RIDS achieves robust accuracy of 99.23\%--99.86\% on natural samples and 86.74\%--87.53\% on adversarial samples across different intrusion detection datasets.
+\end{itemize}
+
+% \section{Related Work}
+% \subsection{Traffic Representation Learning}
+% Traffic intrusion detection identifies normal and malicious traffic by learning the distribution of network traffic data to defend against system attacks. In recent years, supervised intrusion detection algorithms based on deep neural networks have gained prominence. Zhang et al.~\cite{zhang2020intrusion} proposed an improved deep convolutional neural network that enhances detection accuracy but still struggles with encrypted traffic. Cai et al.~\cite{cai2023anomaly} introduced a multivariate time series anomaly detection method based on GAN and Transformer, effectively capturing temporal features between packets, making it suitable for identifying anomalous encrypted traffic. 
+
+% Recently, some studies have explored applying self-supervised learning methods to traffic analysis tasks, using pre-trained base models for intrusion detection to enhance malicious traffic detection performance. The PERT framework uses dynamic word embedding techniques to extract features from payload bytes and classifies traffic through pre-trained models. ET-BERT, based on the BERT architecture from natural language processing, focuses on deep feature learning for encrypted traffic, showing high classification accuracy across various protocols and applications. The YaTC model employs an autoencoder architecture with a pre-training objective of reconstructing original traffic features, achieving excellent performance in traffic classification and anomaly detection. NetMamba introduces Mamba blocks, using a stride method to divide traffic into non-overlapping flow steps, extracting deep traffic features from unlabeled data through self-supervised pre-training, thereby optimizing performance in traffic analysis tasks. 
+
+% These approaches capture complex patterns in traffic through self-supervised learning, improving the handling of unlabeled data and malicious traffic detection. While these methods have achieved remarkable results in network intrusion detection tasks, their performance in detecting malicious traffic significantly decreases when facing adversarial sample attacks due to the use of deep neural network models.
+% \subsection{Adversarial Training}
+% Adversarial attack refers to the deliberate generation of adversarial perturbations by attackers to deceive machine learning models, causing them to make incorrect predictions with high confidence. Attackers can apply adversarial perturbations to malicious traffic to deceive deep neural networks (DNNs), bypassing network intrusion detection systems (NIDS) and potentially damaging critical systems~\cite{zhang2020intrusion,zhang2022adversarial}.
+
+% Msika et al.~\cite{msika2019adversarial} demonstrated that adversarial requests generated using GANs can effectively deceive NIDS, misclassifying malicious traffic as normal traffic. Furthermore, there are various methods for generating adversarial samples. Droos~\cite{droos2023adversarial} shows that attackers can develop adversarial attack techniques targeting multiple NIDS classifiers by learning and approximating the distributions of normal and anomalous samples. These studies reveal the complexity and diversity of adversarial attacks, indicating the vulnerability of NIDS in the face of evolving attack methods.
+
+% To enhance the reliability of NIDS models, recent studies have proposed using adversarial training to improve their robustness against adversarial attacks. Mari et al.~\cite{mari2022adversarial} suggested incorporating adversarial samples into the training dataset to increase the detection rate of adversarial traffic. Sauka et al.~\cite{sauka2022robustness} pointed out that although adversarial training can improve the robustness of NIDS, the resistance to different types of adversarial attacks still requires further testing and validation. The aforementioned studies focus on supervised training of NIDS models, while there is limited research on self-supervised training of NIDS models. Additionally, they do not consider whether the perturbed samples meet the semantic constraints of traffic.
+
+\section{Related Work}
+
+\subsection{Traffic Representation Learning}
+Traffic intrusion detection aims to identify malicious activities by learning the distribution of network traffic data, thereby safeguarding systems from attacks. In recent years, supervised intrusion detection algorithms based on deep neural networks (DNNs) have gained prominence. Zhang et al.~\cite{zhang2020intrusion} proposed an improved deep convolutional neural network (CNN) that optimizes kernel sizes and pooling strategies to enhance detection accuracy, though it still faces challenges in effectively handling encrypted traffic. To address the complexities of temporal dependencies in traffic, Cai et al.~\cite{cai2022tgan} introduced TGAN-AD, a multivariate time series anomaly detection method combining GANs and Transformers. This approach effectively captures temporal features between packets, making it particularly suitable for identifying anomalies within encrypted traffic streams.
+
+However, supervised methods rely heavily on large-scale labeled datasets. To mitigate this dependency, recent studies have explored \textbf{Self-Supervised Learning (SSL)} methods to extract robust traffic representations from unlabeled data. The PERT framework~\cite{he2020pert} utilizes dynamic word embedding techniques to extract semantic features from payload bytes, enabling effective classification through pre-trained models. Similarly, ET-BERT~\cite{lin2022etbert} adapts the BERT architecture from natural language processing to learn contextualized datagram representations, demonstrating high accuracy across various encrypted protocols. YaTC~\cite{dong2023yatc}, a more recent approach, employs a masked autoencoder (MAE) architecture with a multi-level flow representation, achieving state-of-the-art performance by reconstructing original traffic features. Furthermore, NetMamba~\cite{zhou2024netmamba} introduces the Mamba architecture to traffic analysis, utilizing a stride-based method to process non-overlapping flow steps. This allows for the extraction of deep, long-range dependencies from unlabeled traffic with linear computational complexity.
+
+While these SSL-based approaches successfully capture complex traffic patterns, their reliance on DNNs makes them inherently vulnerable. Research indicates that the performance of these models significantly deteriorates when exposed to adversarial attacks, highlighting a critical gap in the robustness of self-supervised NIDS~\cite{warnecke2022evaluating}.
+
+\subsection{Adversarial Training in NIDS}
+Adversarial attacks involve the deliberate generation of perturbations to deceive machine learning models, causing them to make incorrect predictions with high confidence~\cite{goodfellow2014explaining}. In the context of NIDS, attackers can inject subtle perturbations into malicious traffic to bypass detection while preserving the attack's utility~\cite{droos2023adversarial}.
+
+The threat of adversarial examples in NIDS is well-documented. Msika et al.~\cite{msika2019adversarial} demonstrated that adversarial requests generated using Generative Adversarial Networks (GANs) can effectively deceive NIDS classifiers, causing malicious traffic to be misclassified as benign. Similarly, Droos et al.~\cite{droos2023adversarial} showed that attackers can develop transferable adversarial techniques targeting multiple NIDS classifiers by approximating the distributions of normal and anomalous samples.
+
+To defend against such threats, \textbf{Adversarial Training (AT)} has emerged as a promising strategy. AT involves augmenting the training dataset with adversarial examples to improve the model's generalization and robustness. Mari et al.~\cite{mari2023development} suggested incorporating GAN-generated adversarial samples into the training set, which increased the detection rate of adversarial traffic. Sauka et al.~\cite{sauka2022adversarial} further evaluated the robustness of NIDS, noting that while AT improves resilience against specific attacks (e.g., PGD), its effectiveness against diverse and unseen attack types requires further validation.
+
+Despite these advancements, existing research faces two major limitations. First, most studies focus on the adversarial training of supervised NIDS models, with limited attention given to self-supervised frameworks. Second, and more critically, previous works often apply perturbations in the \textit{feature space}, overlooking the \textbf{semantic context} of network traffic~\cite{pierazzi2020intriguing}. Adversarial examples that disregard semantic constraints (e.g., by corrupting protocol headers) violate network standards and are often discarded by network stacks before reaching the target, rendering them practically meaningless~\cite{apruzzese2022position}. Therefore, developing robust NIDS models that account for both self-supervised representation learning and semantic validity is an urgent research direction.
+
+\section{Method}
+\begin{figure*}[htbp]
+    \centering
+    \includegraphics[width=\textwidth]{Images/sat4rids.png}
+    \caption{The architecture of SAT4RIDS framework.}
+    \label{fig:sat4rids}
+\end{figure*}
+\subsection{Overview}
+As shown in Figure~\ref{fig:sat4rids}, SAT4RIDS comprises a data preprocessing stage and a robust model pre-training stage. The model pre-training stage integrates representation learning with adversarial training for the traffic encoder. We will provide a detailed explanation in Section~\ref{sec:sat4rids} on how representation learning for the traffic encoder is combined with adversarial training. In the adversarial training part, we will elaborate on the method for generating adversarial perturbations in traffic data based on packet header masking. Now, we will first introduce how traffic data is preprocessed; through this stage, the raw traffic pcap data is converted into input data format for the encoder.
+
+\subsection{Data Preprocessing}
+Following the data preprocessing approach from the work YaTC, for each traffic packet, we first extract 80 bytes of the packet header and 240 bytes of the payload, padding with zero bytes if necessary. Secondly, to retain flow-level features between packets, we concatenate every 5 adjacent traffic packets based on information such as IP addresses, port numbers, and protocol types. Then, to mitigate the impact of information leakage on model training, we remove the flow's Ethernet headers, set port numbers to zero, and replace IP addresses with random ones. Finally, we organize the concatenated packets into a 40x40 matrix, with each row containing 40 bytes.
+
+\subsection{Representation Learning Part}
+In the representation learning part of SAT4RIDS, we train the encoder to learn high-level feature representations of traffic by reconstructing traffic data with missing information—created using random masking—into traffic data with complete information in the feature space.
+\subsubsection{Missing Information Samples Construction}
+Given the traffic sample $X$, we first use the Fourier transform to convert the time-domain sample into the frequency domain,
+\begin{equation}
+    X_f = FFT(X).
+\end{equation}
+where $FFT$ is the Fast Fourier transform function. Next, a mask matrix $M$ with a coverage rate of 50\% is randomly generated to conceal information in $X_f$ using the mask matrix,
+\begin{equation}
+    X_m = X_f \odot M
+\end{equation}
+where $\odot$ denotes element-wise multiplication of two matrices.
+Finally, we use the inverse Fourier transform to restore the masked frequency domain data back to the time domain,
+\begin{equation}
+    \hat{X} = IFFT(X_m)
+\end{equation}
+where $IFFT$ denotes the inverse Fast Fourier transform function.
+\subsubsection{Traffic Encoder Pre-training}
+The architecture of FreqRec is composed of a twin network. One branch of the twin network is called the online branch, which includes an encoder \(E\) and a predictor head \(P\). The other branch is called the target branch, consisting only of a momentum encoder \(E_m\). The parameters of the momentum encoder are not updated using training gradients; instead, they are the exponential moving average of the encoder's parameters,
+\begin{equation}
+    \theta = \tau\xi + (1-\tau)\theta
+\end{equation}
+where $\xi$ represents the parameters of the encoder \(E\), $\theta$ represents the parameters of the momentum encoder \(E_m\), and \(\tau\) is the update step size. The training objective of the representation learning is as follows,
+\begin{equation}
+    \min_{E,P} \mathcal{L}_{mse} ( P\circ E(X),E_m(\hat{X})).
+\end{equation}
+Here, \(\mathcal{L}_{mse}\) denotes the mean squared error loss.
+
+\subsection{Adversarial Training Part}
+In the adversarial training section of SAT4RIDS, traffic samples \(X\) are trained alongside their corresponding adversarial samples \(X + \delta\), where \(\delta\) represents the calculated adversarial perturbation. The training objective of the adversarial training is 
+\begin{equation}
+    \min_{E,P} \mathcal{L}_{mse} ( P\circ E(X),E_m(X+\delta))
+\end{equation}
+Through adversarial training, the traffic encoder gradually learns robust feature representations to resist adversarial sample attacks. However, unlike the semantic sparsity of image data—where adding small adversarial perturbations to an entire image does not change its semantics—traffic data is constrained by network protocol semantics. Applying perturbations globally to traffic data can alter its semantics, rendering it non-transferable through network devices. This paper proposes a method for generating adversarial perturbations in traffic data based on packet header masking to address the issue of semantic changes in generated adversarial traffic samples.
+\subsubsection{Adversarial Perturbation Calculation}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{Images/phm.pdf}
+    \caption{The Packet Header Masking (PHM) method for generating adversarial perturbations.}
+    \label{fig:phm}
+\end{figure}
+As illustrated in Figure~\ref{fig:phm}, a preprocessing strategy that separates packet headers from payloads is utilized. Therefore, during the perturbation generation phase, we apply masking to the headers. The purpose is to calculate and add adversarial perturbations only to the traffic payload, as the packet headers in traffic data carry the foundational semantics of the packets as traffic.
+
+\begin{equation}
+     \delta:= \arg \max_{\delta,\Vert \delta \Vert \leq \epsilon}\mathcal{L}_{mse}(P\circ E(X),E_m(X+\delta \odot m)) \odot m.
+\end{equation}
+Here, $\epsilon$ represents the allowable range of perturbation, and $m$ is the mask matrix for the packet headers in $X$.
+
+\subsection{SAT4RIDS}
+\label{sec:sat4rids}
+Finally, we integrate the pre-training learning objective with the adversarial training objective. The overall training objective of SAT4RIDS is as follows:
+\begin{equation}
+    \min_{E,P} [\mathcal{L}_{mse} ( P\circ E(X),E_m(\hat{X})) +  w\cdot\mathcal{L}_{mse} ( P\circ E(X),E_m(X+\delta))]
+\end{equation}
+where $w$ is the weight adjustment function for adversarial training.
+\section{Experimentation}
+\subsection{Datasets}
+\begin{enumerate}
+    \item \textbf{CICIoT2022:} The CICIoT2022 dataset includes network traffic data from six types of IoT devices, featuring various attack types such as Denial of Service (DoS) attacks and brute force attacks.
+    \item \textbf{ISCXVPN2016:} The ISCXVPN2016 dataset focuses on virtual private network (VPN) traffic research, containing a total of 7 types of normal/attack traffic.
+\end{enumerate}
+\subsection{Training Settings}
+Our training code is adapted from the BYOL method in the widely used self-supervised learning framework, Solo-learn \cite{JMLR:v23:21-1155}. During model training, we use a neural network model with 5 Transformer blocks as the encoder. In the pre-training phase, we mask 50\% of the sample features, and the encoder reconstructs the masked information in the feature space. The adversarial training part uses the original samples without masking. We optimize the model parameters using the LARS optimizer, set the batch size to 64, and employ a cosine annealing learning rate scheduler with an initial learning rate of 0.1875 and a weight decay of 1e-5. The adversarial training weight scheduling function $w$ in the formula is chosen to be linear.
+\subsection{Evaluation Metrics}
+To comprehensively assess the impact of SAT4RIDS on enhancing model robustness, we evaluated the classification accuracy of the model on natural samples and adversarial samples. We report top-1 accuracy (ACC) for both natural and adversarial samples. The accuracy on natural samples and adversarial samples are denoted as natural accuracy and adversarial accuracy, respectively.
+
+\subsection{Experimental Results}
+
+We compare the proposed SAT4RIDS framework with the Adversarial Contrastive Learning (ACL) method~\cite{khosla2020supervised}, a state-of-the-art adversarial training approach built upon self-supervised contrastive learning. Since SAT4RIDS also emphasizes adversarial robustness and representation learning, its modeling approach is highly comparable to ACL, making it a suitable baseline for evaluation. To ensure a fair and thorough comparison, we evaluate both ACL and SAT4RIDS under three training configurations:
+
+\begin{enumerate}
+    \item \textbf{Classification Head Only:} Only the classification head is fine-tuned using natural samples only.
+    \item \textbf{Classification Head Only with Adversarial Data:} Only the classification head is fine-tuned using both natural samples and adversarial samples.
+    \item \textbf{Full Training with Adversarial Data:} The entire model (both encoder and classification head) is fine-tuned using a dataset containing adversarial samples.
+\end{enumerate}
+
+Table~\ref{tab:results} presents the experimental results on both CICIoT2022 and ISCXVPN2016 datasets. We report the classification accuracy on natural samples and adversarial samples for each method.
+
+\begin{table*}[htbp]
+\centering
+\small
+\begin{tabular}{lcccc}
+\toprule
+\textbf{Method} & \textbf{CICIoT2022} & \textbf{CICIoT2022} & \textbf{ISCXVPN2016} & \textbf{ISCXVPN2016} \\
+& \textbf{(Natural)} & \textbf{(Adversarial)} & \textbf{(Natural)} & \textbf{(Adversarial)} \\
+\midrule
+ACL (Head Only) & 66.85 & 63.62 & 62.82 & 58.71 \\
+ACL (Head Only + Adv) & 67.57 & 64.19 & 63.44 & 58.88 \\
+ACL (Full Training + Adv) & 93.69 & 91.48 & 92.19 & 84.85 \\
+\midrule
+SAT4RIDS (Head Only) & 69.32 & 63.98 & 65.44 & 61.30 \\
+SAT4RIDS (Head Only + Adv) & 69.78 & 64.49 & 65.44 & 61.12 \\
+SAT4RIDS (Full Training + Adv) & \textbf{99.23} & \textbf{87.53} & \textbf{99.86} & \textbf{86.74} \\
+\bottomrule
+\end{tabular}
+\caption{Classification accuracy comparison on natural and adversarial samples across different methods on CICIoT2022 and ISCXVPN2016 datasets.}
+\label{tab:results}
+\end{table*}
+
+The experimental results demonstrate several key findings. Fine-tuning only the classification head achieves low accuracy, with only marginal improvements from adding adversarial samples. In contrast, full training achieves substantial improvements, demonstrating that fine-tuning only the head limits robust representation learning as the pre-trained encoder lacks adversarial robustness. SAT4RIDS achieves the best performance with full training: 99.23\% natural and 87.53\% adversarial accuracy on CICIoT2022, and 99.86\% natural and 86.74\% adversarial accuracy on ISCXVPN2016, representing improvements of +5.54\% in natural accuracy on CICIoT2022 and +1.89\% in adversarial accuracy on ISCXVPN2016 over the best ACL configuration. This superior performance stems from integrating self-supervised representation learning with adversarial training during pre-training.
+
+\subsection{Training Efficiency Analysis}
+
+In addition to classification accuracy, we compare the training efficiency between ACL and SAT4RIDS. Table~\ref{tab:efficiency} presents the training time for both methods.
+
+\begin{table}[H]
+\centering
+\small
+\begin{tabular}{lc}
+\toprule
+\textbf{Method} & \textbf{Training Time (hours)} \\
+\midrule
+ACL & 53.47 \\
+SAT4RIDS (Ours) & \textbf{24.79} \\
+\bottomrule
+\end{tabular}
+\caption{Training efficiency comparison}
+\label{tab:efficiency}
+\end{table}
+
+The results show that SAT4RIDS achieves significantly faster training while maintaining the same model complexity. Specifically, SAT4RIDS reduces training time by 53.6\% compared to ACL, demonstrating superior training efficiency. Both methods have identical model architectures with 7.2M trainable parameters and 12.1M total parameters. The improved training efficiency of SAT4RIDS can be attributed to its more effective integration of representation learning and adversarial training during pre-training, which reduces the number of training iterations required to achieve comparable or better performance.
+
+\subsection{Ablation Study}
+
+To understand the impact of the adversarial training weight ratio $w$ in SAT4RIDS, we conduct an ablation study examining how different values of $w$ affect model performance. The weight ratio $w$ controls the balance between representation learning and adversarial training objectives in the overall loss function. Table~\ref{tab:ablation_weight} presents the results on CICIoT2022 dataset with different weight ratios ranging from 0.1 to 0.7.
+
+\begin{table}[H]
+\centering
+\small
+\begin{tabular}{lcc}
+\toprule
+\textbf{$w$} & \textbf{Natural} & \textbf{Adversarial} \\
+\midrule
+0.1 & 99.28 & 73.32 \\
+0.3 & 99.03 & 82.30 \\
+0.5 & 99.23 & 87.53 \\
+0.7 & 98.13 & 85.74 \\
+\bottomrule
+\end{tabular}
+\caption{Ablation study on the adversarial training weight ratio $w$ on CICIoT2022 dataset.}
+\label{tab:ablation_weight}
+\end{table}
+
+The results show that natural accuracy remains stable across different weight ratios, indicating that increasing adversarial training weight does not significantly compromise clean sample performance. Adversarial accuracy improves from 73.32\% at $w=0.1$ to 87.53\% at $w=0.5$ (+14.21 percentage points), but decreases to 85.74\% at $w=0.7$, suggesting that $w=0.5$ represents an optimal balance between representation learning and adversarial training.
+
+\section{Discussion}
+
+The experimental results presented in this paper reveal several important insights into adversarial robustness for network intrusion detection systems based on self-supervised learning.
+ 
+\subsection{Implications of Experimental Results}
+
+Our experimental results demonstrate that integrating adversarial training with self-supervised pre-training is crucial for developing robust NIDS models. The significant performance gap between ACL with only the classification head fine-tuned and ACL with full training underscores the importance of end-to-end adversarial training. The superior performance of SAT4RIDS can be attributed to its simultaneous optimization of representation learning and adversarial robustness during pre-training, which enables the encoder to extract robust features invariant to both missing information and adversarial perturbations. The ablation study reveals that a balanced adversarial training weight ratio ($w=0.5$) achieves optimal performance.
+
+\subsection{Advantages of Packet Header Masking}
+
+The Packet Header Masking (PHM) method addresses a critical limitation of existing adversarial training approaches for network traffic. Traditional methods apply global perturbations to traffic samples, which can violate network protocol semantics and render adversarial samples non-transferable. By applying adversarial perturbations only to the payload portion while preserving protocol-compliant headers, PHM ensures that generated adversarial samples maintain semantic validity and can be successfully transmitted through network devices.
+
+\subsection{Training Efficiency Considerations}
+
+The significant reduction in training time achieved by SAT4RIDS (24.79 hours vs. 53.47 hours, a 53.6\% reduction) demonstrates the efficiency of integrating representation learning and adversarial training during pre-training. The improved training efficiency, combined with identical model complexity, makes SAT4RIDS more practical for real-world deployment scenarios.
+
+\subsection{Limitations and Future Work}
+
+While SAT4RIDS demonstrates superior performance, there remains a gap between natural accuracy (99.23\%--99.86\%) and adversarial accuracy (86.74\%--87.53\%), indicating room for further improvement in adversarial robustness. Future research should explore more advanced adversarial training techniques to bridge this performance gap and enhance the robustness of intrusion detection systems.
+
+\section{Conclusion}
+
+This paper presents SAT4RIDS, a Self-supervised Adversarial Training Framework for Robust Intrusion Detection Systems. The framework integrates adversarial training with self-supervised representation learning during pre-training, and introduces Packet Header Masking (PHM) to ensure adversarial samples comply with network protocol semantics. Experimental results on CICIoT2022 and ISCXVPN2016 datasets demonstrate that SAT4RIDS achieves state-of-the-art performance, with natural accuracy reaching 99.23\%--99.86\% and adversarial accuracy reaching 86.74\%--87.53\%, while reducing training time by 53.6\% compared to baseline methods.
+
+
+% \section*{Acknowledgment}
+\bibliographystyle{IEEEtran}
+\bibliography{mylab}
+\end{document}
