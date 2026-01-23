@@ -12,16 +12,21 @@
     <header>
         <nav>
             <ul>
-                <li><a href="#home">首页</a></li>
-                <li><a href="#education">教育</a></li>
-                <li><a href="#publications">论文</a></li>
-                <li><a href="#research">科研</a></li>
-                <li><a href="#projects">项目</a></li>
-                <li><a href="#competitions">竞赛</a></li>
-                <li><a href="#skills">技能</a></li>
-                <li><a href="#honors">荣誉</a></li>
-                <li><a href="#others">其他</a></li>
-                <li><a href="#contact">联系</a></li>
+                <li><a href="#home" data-i18n="nav.home">首页</a></li>
+                <li><a href="#education" data-i18n="nav.education">教育</a></li>
+                <li><a href="#publications" data-i18n="nav.publications">论文</a></li>
+                <li><a href="#research" data-i18n="nav.research">科研</a></li>
+                <li><a href="#projects" data-i18n="nav.projects">项目</a></li>
+                <li><a href="#competitions" data-i18n="nav.competitions">竞赛</a></li>
+                <li><a href="#skills" data-i18n="nav.skills">技能</a></li>
+                <li><a href="#honors" data-i18n="nav.honors">荣誉</a></li>
+                <li><a href="#others" data-i18n="nav.others">其他</a></li>
+                <li><a href="#contact" data-i18n="nav.contact">联系</a></li>
+                <li class="language-switcher">
+                    <button id="langToggle" class="lang-btn">
+                        <span id="currentLang">中文</span> / <span id="targetLang">EN</span>
+                    </button>
+                </li>
             </ul>
         </nav>
     </header>
@@ -29,136 +34,148 @@
     <!-- 首页 Hero -->
     <section id="home" class="hero">
         <img src="images/photo.png" alt="李炜仪" class="hero-photo">
-        <h1>李炜仪</h1>
-        <p>研究方向：多模态大语言模型与多智能体推理 / 人工智能应用</p>
+        <h1 data-i18n="home.name">李炜仪</h1>
+        <p data-i18n="home.research">研究方向：多模态大语言模型与多智能体推理 / 人工智能应用</p>
         <div class="social-links">
             <a href="mailto:liweiyi@bupt.edu.cn">Email</a>
             <span>|</span>
-            <span>17201573086</span>
+            <a href="tel:17201573086">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="display: inline-block; vertical-align: middle; margin-right: 5px;">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                17201573086
+            </a>
             <span>|</span>
             <a href="https://github.com/getstronger-sys" target="_blank">GitHub</a>
             <span>|</span>
-            <a href="https://getstronger-sys.github.io/Resume/" target="_blank">个人主页</a>
+            <a href="https://getstronger-sys.github.io/Resume/" target="_blank" data-i18n="home.personalPage">个人主页</a>
         </div>
     </section>
 
     <!-- 教育背景 -->
     <section id="education">
-        <h2>教育背景</h2>
+        <h2 data-i18n="education.title">教育背景</h2>
         <div class="content">
-            <p><strong>北京邮电大学 | 智能科学与技术</strong> (2023.09 -- 2027.06)</p>
-            <ul>
-                <li>GPA: 3.87/4.0 | 加权平均分: 93.21/100</li>
-                <li>专业排名: 3/96（3.1%）</li>
-            </ul>
+            <div class="education-header">
+                <div class="education-image">
+                    <img src="images/bupt.png" alt="北京邮电大学" class="bupt-logo">
+                </div>
+                <div class="education-info">
+                    <p class="education-title-row"><strong data-i18n="education.university">北京邮电大学 | 智能科学与技术</strong> <span class="education-period" data-i18n="education.period">(2023.09 -- 2027.06)</span></p>
+                    <ul>
+                        <li data-i18n="education.gpa">GPA: 3.87/4.0 | 加权平均分: 93.21/100</li>
+                        <li data-i18n="education.rank">专业排名: 3/96（3.1%）</li>
+                    </ul>
+                </div>
+            </div>
             
             <!-- 优势课程表格 -->
             <div class="courses-container">
-                <h3>优势课程</h3>
+                <h3 data-i18n="education.courses">优势课程</h3>
                 <div class="courses-table-wrapper">
                     <table class="courses-table">
                         <thead>
                             <tr>
-                                <th>课程名称</th>
-                                <th>课程性质</th>
-                                <th>成绩</th>
-                                <th>学分</th>
+                                <th data-i18n="table.courseName">课程名称</th>
+                                <th data-i18n="table.courseType">课程性质</th>
+                                <th data-i18n="table.grade">成绩</th>
+                                <th data-i18n="table.credits">学分</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>计算导论与程序设计课程设计</td>
-                                <td>必修</td>
+                                <td data-i18n="courses.course1">计算导论与程序设计课程设计</td>
+                                <td data-i18n="courses.typeRequired">必修</td>
                                 <td class="score-highlight">100</td>
                                 <td>1.5</td>
                             </tr>
                             <tr>
-                                <td>高等数学A(上)</td>
-                                <td>必修</td>
+                                <td data-i18n="courses.course2">高等数学A(上)</td>
+                                <td data-i18n="courses.typeRequired">必修</td>
                                 <td class="score-highlight">99</td>
                                 <td>5</td>
                             </tr>
                             <tr>
-                                <td>数据结构</td>
-                                <td>必修</td>
+                                <td data-i18n="courses.course3">数据结构</td>
+                                <td data-i18n="courses.typeRequired">必修</td>
                                 <td class="score-highlight">98</td>
                                 <td>4</td>
                             </tr>
                             <tr>
-                                <td>形式语言与自动机</td>
-                                <td>必修</td>
+                                <td data-i18n="courses.course4">形式语言与自动机</td>
+                                <td data-i18n="courses.typeRequired">必修</td>
                                 <td class="score-highlight">98</td>
                                 <td>2</td>
                             </tr>
                             <tr>
-                                <td>Python程序设计</td>
-                                <td>选修</td>
+                                <td data-i18n="courses.course5">Python程序设计</td>
+                                <td data-i18n="courses.typeElective">选修</td>
                                 <td class="score-highlight">98</td>
                                 <td>2</td>
                             </tr>
                             <tr>
-                                <td>数字电路设计</td>
-                                <td>必修</td>
+                                <td data-i18n="courses.course6">数字电路设计</td>
+                                <td data-i18n="courses.typeRequired">必修</td>
                                 <td class="score-highlight">97</td>
                                 <td>3</td>
                             </tr>
                             <tr>
-                                <td>数据结构与算法课程设计</td>
-                                <td>必修</td>
+                                <td data-i18n="courses.course7">数据结构与算法课程设计</td>
+                                <td data-i18n="courses.typeRequired">必修</td>
                                 <td class="score-highlight">97</td>
                                 <td>2</td>
                             </tr>
                             <tr>
-                                <td>Design & Build 实训(智能)</td>
-                                <td>必修</td>
+                                <td data-i18n="courses.course8">Design & Build 实训(智能)</td>
+                                <td data-i18n="courses.typeRequired">必修</td>
                                 <td class="score-highlight">97</td>
                                 <td>2</td>
                             </tr>
                             <tr>
-                                <td>电子系统基础</td>
-                                <td>必修</td>
+                                <td data-i18n="courses.course9">电子系统基础</td>
+                                <td data-i18n="courses.typeRequired">必修</td>
                                 <td class="score-highlight">96</td>
                                 <td>3</td>
                             </tr>
                             <tr>
-                                <td>离散数学</td>
-                                <td>必修</td>
+                                <td data-i18n="courses.course10">离散数学</td>
+                                <td data-i18n="courses.typeRequired">必修</td>
                                 <td class="score-highlight">96</td>
                                 <td>4</td>
                             </tr>
                             <tr>
-                                <td>人工智能导论</td>
-                                <td>必修</td>
+                                <td data-i18n="courses.course11">人工智能导论</td>
+                                <td data-i18n="courses.typeRequired">必修</td>
                                 <td class="score-highlight">96</td>
                                 <td>2.5</td>
                             </tr>
                             <tr>
-                                <td>产品开发与管理</td>
-                                <td>必修</td>
+                                <td data-i18n="courses.course12">产品开发与管理</td>
+                                <td data-i18n="courses.typeRequired">必修</td>
                                 <td class="score-highlight">96</td>
                                 <td>2.5</td>
                             </tr>
                             <tr>
-                                <td>概率论与数理统计</td>
-                                <td>必修</td>
+                                <td data-i18n="courses.course13">概率论与数理统计</td>
+                                <td data-i18n="courses.typeRequired">必修</td>
                                 <td class="score-highlight">96</td>
                                 <td>3</td>
                             </tr>
                             <tr>
-                                <td>JAVA高级语言程序设计</td>
-                                <td>必修</td>
+                                <td data-i18n="courses.course14">JAVA高级语言程序设计</td>
+                                <td data-i18n="courses.typeRequired">必修</td>
                                 <td class="score-highlight">95</td>
                                 <td>3</td>
                             </tr>
                             <tr>
-                                <td>线性代数</td>
-                                <td>必修</td>
+                                <td data-i18n="courses.course15">线性代数</td>
+                                <td data-i18n="courses.typeRequired">必修</td>
                                 <td class="score-highlight">95</td>
                                 <td>3</td>
                             </tr>
                             <tr>
-                                <td>数据库系统</td>
-                                <td>必修</td>
+                                <td data-i18n="courses.course16">数据库系统</td>
+                                <td data-i18n="courses.typeRequired">必修</td>
                                 <td class="score-highlight">95</td>
                                 <td>3.5</td>
                             </tr>
@@ -171,7 +188,7 @@
 
     <!-- 论文 -->
     <section id="publications">
-        <h2>论文</h2>
+        <h2 data-i18n="publications.title">论文</h2>
         <div class="content">
             <div class="publication-note" style="margin-bottom: 20px;">
                 <sup>*</sup> Equal contribution; <sup>†</sup> Corresponding author
@@ -190,7 +207,7 @@
                             <span class="status-badge">Under Review</span>
                         </div>
                         <h3 class="publication-title">Stylistic Idiosyncrasies of Code Generated by Large Language Models</h3>
-                        <p class="publication-authors"><strong>Weiyi Li</strong>, Zezhong Chen, Jiang Fang<sup>†</sup>, Xuhong Zuo, Jiyan Sun<sup>†</sup>.</p>
+                        <p class="publication-authors"><strong class="author-name">Weiyi Li</strong>, Zezhong Chen, Jiang Fang<sup>†</sup>, Xuhong Zuo, Jiyan Sun<sup>†</sup>.</p>
                         <div class="publication-buttons">
                             <a href="images/学术成果/Code_Classification__CSCWD.pdf" target="_blank" class="btn-pdf"><i class="fas fa-file-pdf"></i> PDF</a>
                         </div>
@@ -208,7 +225,7 @@
                             <span class="status-badge">Under Review</span>
                         </div>
                         <h3 class="publication-title">SAT4RIDS: Self-Supervised Learning Adversarial Training Framework for Robust Network Intrusion Detection System</h3>
-                        <p class="publication-authors"><strong>Weiyi Li</strong><sup>*</sup>, <strong>Jiadong Fu</strong><sup>*</sup>, Jiang Fang<sup>†</sup>, Xuhong Zuo, Liru Geng<sup>†</sup>.</p>
+                        <p class="publication-authors"><strong class="author-name">Weiyi Li</strong><sup>*</sup>, Jiadong Fu<sup>*</sup>, Jiang Fang<sup>†</sup>, Xuhong Zuo, Liru Geng<sup>†</sup>.</p>
                         <div class="publication-buttons">
                             <a href="images/学术成果/SAT4RIDS_CSCWD.pdf" target="_blank" class="btn-pdf"><i class="fas fa-file-pdf"></i> PDF</a>
                         </div>
@@ -226,7 +243,7 @@
                             <span class="status-badge">Under Review</span>
                         </div>
                         <h3 class="publication-title">Signal-SGN++: Topology-Enhanced Time–Frequency Spiking Graph Network for Skeleton-Based Action Recognition</h3>
-                        <p class="publication-authors">Naichuan Zheng, Hailun Xia<sup>†</sup>, <strong>Weiyi Li</strong>. <span class="publication-note-small">Extended from ACM MM 2025 (CCF-A), Accepted</span></p>
+                        <p class="publication-authors">Naichuan Zheng, Hailun Xia<sup>†</sup>, <strong class="author-name">Weiyi Li</strong>. <span class="publication-note-small">Extended from ACM MM 2025 (CCF-A), Accepted</span></p>
                         <div class="publication-buttons">
                             <a href="images/学术成果/signal-SGN++.pdf" target="_blank" class="btn-pdf"><i class="fas fa-file-pdf"></i> PDF</a>
                         </div>
@@ -244,7 +261,7 @@
                             <span class="status-badge">Under Review</span>
                         </div>
                         <h3 class="publication-title">SNN-Driven Multimodal Human Action Recognition via Sparse Spatial-Temporal Data Fusion</h3>
-                        <p class="publication-authors">Naichuan Zheng, Hailun Xia, Zeyu Liang, Duyuchen Du, <strong>Weiyi Li</strong>.</p>
+                        <p class="publication-authors">Naichuan Zheng, Hailun Xia, Zeyu Liang, Duyuchen Du, <strong class="author-name">Weiyi Li</strong>.</p>
                         <div class="publication-buttons">
                             <a href="#" class="btn-pdf"><i class="fas fa-file-pdf"></i> PDF</a>
                         </div>
@@ -262,7 +279,7 @@
                             <span class="status-badge">In Preparation</span>
                         </div>
                         <h3 class="publication-title">VideoCD: Contrastive Decoding with Reinforcement Learning for Enhancing Video Temporal Understanding in Video-LLMs</h3>
-                        <p class="publication-authors">Zhenyan Chen, Yuqi Pan, Sicong Leng, Guoshun Nan, Jiade Wang, <strong>Weiyi Li</strong>, Ruikai Xiao, Wang Xiao, Xiongjie Tang, Zihua Rong, Chenyang Wang, Hua Wang, Xudong Jiang.</p>
+                        <p class="publication-authors">Zhenyan Chen, Yuqi Pan, Sicong Leng, Guoshun Nan, Jiade Wang, <strong class="author-name">Weiyi Li</strong>, Ruikai Xiao, Wang Xiao, Xiongjie Tang, Zihua Rong, Chenyang Wang, Hua Wang, Xudong Jiang.</p>
                         <div class="publication-buttons">
                             <a href="images/学术成果/videoCD.pdf" target="_blank" class="btn-pdf"><i class="fas fa-file-pdf"></i> PDF</a>
                         </div>
@@ -280,7 +297,7 @@
                             <span class="status-badge">Prepared</span>
                         </div>
                         <h3 class="publication-title">LLM Multi-agents for Efficient Security in 6G Smart Factories</h3>
-                        <p class="publication-authors">Xiaosu Xue, Guoshun Nan, Hang Cui*, <strong>Weiyi Li*</strong>, Chubin Zhang, Junzheng Wang, Xintong Li, Jianlong Ban, Yanqiu Zhao, Min Lei, Qimei Cui and Xiaofeng Tao.</p>
+                        <p class="publication-authors">Xiaosu Xue, Guoshun Nan, Hang Cui*, <strong class="author-name">Weiyi Li*</strong>, Chubin Zhang, Junzheng Wang, Xintong Li, Jianlong Ban, Yanqiu Zhao, Min Lei, Qimei Cui and Xiaofeng Tao.</p>
                         <div class="publication-buttons">
                             <a href="images/学术成果/JSAC2025-Energy投稿作品.pdf" target="_blank" class="btn-pdf"><i class="fas fa-file-pdf"></i> PDF</a>
                         </div>
@@ -298,7 +315,7 @@
                             <span class="status-badge">Best Poster</span>
                         </div>
                         <h3 class="publication-title">Technology-Driven Sports Digital Twin: Human-Machine Collaborative Olympic Strategic Decision System</h3>
-                        <p class="publication-authors"><strong>Weiyi Li</strong> et al.</p>
+                        <p class="publication-authors"><strong class="author-name">Weiyi Li</strong> et al.</p>
                         <div class="publication-buttons">
                             <a href="images/学术成果/MIC优秀论文.pdf" target="_blank" class="btn-pdf"><i class="fas fa-file-pdf"></i> PDF</a>
                         </div>
@@ -312,11 +329,11 @@
                     </div>
                     <div class="publication-content">
                         <div class="publication-header">
-                            <span class="conference-badge">国创赛</span>
-                            <span class="status-badge">铜奖</span>
+                            <span class="conference-badge" data-i18n="publications.zhiwujie.badge1">国创赛</span>
+                            <span class="status-badge" data-i18n="publications.zhiwujie.badge2">铜奖</span>
                         </div>
-                        <h3 class="publication-title">智体无界 — 基于类脑架构的运动智能体</h3>
-                        <p class="publication-authors"><strong>Weiyi Li</strong> et al.</p>
+                        <h3 class="publication-title" data-i18n="publications.zhiwujie.title">智体无界 — 基于类脑架构的运动智能体</h3>
+                        <p class="publication-authors"><strong class="author-name">Weiyi Li</strong> et al.</p>
                         <div class="publication-buttons">
                             <a href="images/学术成果/国创赛智体无界.pdf" target="_blank" class="btn-pdf"><i class="fas fa-file-pdf"></i> PDF</a>
                         </div>
@@ -328,40 +345,40 @@
 
     <!-- 项目经历 -->
     <section id="projects">
-        <h2>项目经历</h2>
+        <h2 data-i18n="projects.title">项目经历</h2>
         <div class="content">
             <div class="project-item">
-                <h3>[1] 不良言论识别模型</h3>
+                <h3 data-i18n="projects.project1.title">[1] 不良言论识别模型</h3>
                 <ul>
-                    <li>基于 Llama-13B 使用 LoRA 进行轻量微调，设计五维恶意值向量输出并通过雷达图可视化，使用 INT8 量化生成轻量化模型；负责数据集构建、标签体系设计与模型训练。</li>
+                    <li data-i18n="projects.project1.content">基于 Llama-13B 使用 LoRA 进行轻量微调，设计五维恶意值向量输出并通过雷达图可视化，使用 INT8 量化生成轻量化模型；负责数据集构建、标签体系设计与模型训练。</li>
                 </ul>
             </div>
             
             <div class="project-item">
-                <h3>[2] "智体无界 — 基于类脑架构的运动智能体"（荣获中国国际大学生创新大赛铜奖）</h3>
+                <h3 data-i18n="projects.project2.title">[2] "智体无界 — 基于类脑架构的运动智能体"（荣获中国国际大学生创新大赛铜奖）</h3>
                 <ul>
-                    <li>基于国家乒乓球运动员数据集，融合图神经网络、时空双流模型实现毫米级动作量化与智能技战术分析；负责动作识别与分割、动作分析逻辑设计与参数优化。</li>
+                    <li data-i18n="projects.project2.content">基于国家乒乓球运动员数据集，融合图神经网络、时空双流模型实现毫米级动作量化与智能技战术分析；负责动作识别与分割、动作分析逻辑设计与参数优化。</li>
                 </ul>
             </div>
             
             <div class="project-item">
-                <h3>[3] 配备2D激光雷达的迷宫导航与建图自主移动机器人（团队综合成绩位列年级前十）</h3>
+                <h3 data-i18n="projects.project3.title">[3] 配备2D激光雷达的迷宫导航与建图自主移动机器人（团队综合成绩位列年级前十）</h3>
                 <ul>
-                    <li>Design&Build 课程项目，代码：<a href="https://github.com/getstronger-sys/Radar-car" target="_blank">github.com/getstronger-sys/Radar-car</a>。作为项目负责人，独立完成 SLAM 实时建图、DWA 局部避障及 A* 路径规划，合作完成传感器与控制硬件对接。</li>
+                    <li data-i18n="projects.project3.content">Design&Build 课程项目，代码：<a href="https://github.com/getstronger-sys/Radar-car" target="_blank" class="code-link">查看代码</a>。作为项目负责人，独立完成 SLAM 实时建图、DWA 局部避障及 A* 路径规划，合作完成传感器与控制硬件对接。</li>
                 </ul>
             </div>
             
             <div class="project-item">
-                <h3>[4] 北京地铁查询系统（独立开发）</h3>
+                <h3 data-i18n="projects.project4.title">[4] 北京地铁查询系统（独立开发）</h3>
                 <ul>
-                    <li>数据结构与算法课程设计，代码：<a href="https://github.com/getstronger-sys/Beijing-Metro-Information-Query-System" target="_blank">github.com/getstronger-sys/Beijing-Metro-Information-Query-System</a>。实现基于邻接表+最小堆优化的双策略路径规划，线路级剪枝提升查询效率30%，整合真实时刻表数据实现动态线路管理与实时发车模拟。</li>
+                    <li data-i18n="projects.project4.content">数据结构与算法课程设计，代码：<a href="https://github.com/getstronger-sys/Beijing-Metro-Information-Query-System" target="_blank" class="code-link">查看代码</a>。实现基于邻接表+最小堆优化的双策略路径规划，线路级剪枝提升查询效率30%，整合真实时刻表数据实现动态线路管理与实时发车模拟。</li>
                 </ul>
             </div>
             
             <div class="project-item">
-                <h3>[5] 工程技术学会（IET）颁发的2025年模型国际会议（MIC）最佳海报奖与优秀论文</h3>
+                <h3 data-i18n="projects.project5.title">[5] 工程技术学会（IET）颁发的2025年模型国际会议（MIC）最佳海报奖与优秀论文</h3>
                 <ul>
-                    <li>论文"Technology-Driven Sports Digital Twin: Human-Machine Collaborative Olympic Strategic Decision System"提出面向奥运会的战略决策框架，结合 K-means 聚类、时间序列预测与马尔可夫模型实现奖牌分布预测与跨国训练优化。</li>
+                    <li data-i18n="projects.project5.content">论文"Technology-Driven Sports Digital Twin: Human-Machine Collaborative Olympic Strategic Decision System"提出面向奥运会的战略决策框架，结合 K-means 聚类、时间序列预测与马尔可夫模型实现奖牌分布预测与跨国训练优化。</li>
                 </ul>
             </div>
         </div>
@@ -369,24 +386,24 @@
 
     <!-- 竞赛 -->
     <section id="competitions">
-        <h2><i class="fas fa-trophy"></i> 竞赛</h2>
+        <h2><i class="fas fa-trophy"></i> <span data-i18n="competitions.title">竞赛</span></h2>
         <div class="content">
             <div class="competition-list">
                 <div class="competition-item">
                     <i class="fas fa-medal" style="color: #FFD700;"></i>
-                    <span>2024 全国大学生数学竞赛一等奖</span>
+                    <span data-i18n="competitions.comp1">2024 全国大学生数学竞赛一等奖</span>
                 </div>
                 <div class="competition-item">
                     <i class="fas fa-medal" style="color: #C0C0C0;"></i>
-                    <span>2025 全国大学生数学建模竞赛国家二等奖</span>
+                    <span data-i18n="competitions.comp2">2025 全国大学生数学建模竞赛国家二等奖</span>
                 </div>
                 <div class="competition-item">
                     <i class="fas fa-medal" style="color: #CD7F32;"></i>
-                    <span>2024 首届高校ICT产教融合创新大赛二等奖</span>
+                    <span data-i18n="competitions.comp3">2024 首届高校ICT产教融合创新大赛二等奖</span>
                 </div>
                 <div class="competition-item">
                     <i class="fas fa-medal" style="color: #CD7F32;"></i>
-                    <span>2024 全国大学生英语竞赛三等奖</span>
+                    <span data-i18n="competitions.comp4">2024 全国大学生英语竞赛三等奖</span>
                 </div>
             </div>
         </div>
@@ -394,73 +411,73 @@
 
     <!-- 科研经历 -->
     <section id="research">
-        <h2>科研经历</h2>
+        <h2 data-i18n="research.title">科研经历</h2>
         <div class="content">
             <div class="research-entry">
-                <p><strong>北京邮电大学网络空间安全学院 – 移动互联网安全技术国家工程实验室</strong> (2024.06 -- 至今)</p>
-                <p class="position">本科实习生 | 导师：南国顺教授</p>
+                <p><strong data-i18n="research.lab1.name">北京邮电大学网络空间安全学院 – 移动互联网安全技术国家工程实验室</strong> <span data-i18n="research.lab1.period">(2024.06 -- 至今)</span></p>
+                <p class="position"><span data-i18n="research.lab1.position">本科实习生 | 导师：南国顺教授</span></p>
                 
-                <p><strong>[1] LLM Multi-agents for Efficient Security in 6G Smart Factories</strong>（Manuscript prepared）</p>
+                <p><strong>[1] LLM Multi-agents for Efficient Security in 6G Smart Factories</strong><span data-i18n="research.lab1.project1.status">（Manuscript prepared）</span></p>
                 <ul>
-                    <li>此论文首次提出MAS-SEE（Multi-Agent System for Security & Energy Efficiency），通过轻量级边缘检测和意图驱动的策略生成，实现了6G智能工厂中安全性和能效的动态优化与平衡。</li>
-                    <li>本人设计意图智能体，实现类脑语义识别与管理员指令解析；构建免疫与协调机制，实现冲突检测及最优分配策略；负责项目论文撰写与关键架构绘图。</li>
+                    <li data-i18n="research.lab1.project1.desc1">此论文首次提出MAS-SEE（Multi-Agent System for Security & Energy Efficiency），通过轻量级边缘检测和意图驱动的策略生成，实现了6G智能工厂中安全性和能效的动态优化与平衡。</li>
+                    <li data-i18n="research.lab1.project1.desc2">本人设计意图智能体，实现类脑语义识别与管理员指令解析；构建免疫与协调机制，实现冲突检测及最优分配策略；负责项目论文撰写与关键架构绘图。</li>
                 </ul>
                 
-                <p><strong>[2] 基于电压信号与生成式智能融合的极低照度成像增强方法（专利）</strong></p>
+                <p><strong data-i18n="research.lab1.project2.title">[2] 基于电压信号与生成式智能融合的极低照度成像增强方法（专利）</strong></p>
                 <ul>
-                    <li>本专利提出端到端微伏级电压信号成像方法，通过时域、空域与频谱多分支特征融合及自监督暗帧校正，实现＜0.01 lux条件下高信噪比、高保真彩色图像实时生成。</li>
-                    <li>本人设计从传感器采集到最终图像输出的整个处理流程，绘制相应的时序图，并负责专利文件的撰写。</li>
+                    <li data-i18n="research.lab1.project2.desc1">本专利提出端到端微伏级电压信号成像方法，通过时域、空域与频谱多分支特征融合及自监督暗帧校正，实现＜0.01 lux条件下高信噪比、高保真彩色图像实时生成。</li>
+                    <li data-i18n="research.lab1.project2.desc2">本人设计从传感器采集到最终图像输出的整个处理流程，绘制相应的时序图，并负责专利文件的撰写。</li>
                 </ul>
             </div>
             
             <div class="research-entry">
-                <p><strong>江淮前沿技术协同创新中心AI安全专业部实验室</strong> (2025.06 -- 至今)</p>
-                <p class="position">本科实习生 | 导师：房江博士</p>
+                <p><strong data-i18n="research.lab2.name">江淮前沿技术协同创新中心AI安全专业部实验室</strong> <span data-i18n="research.lab2.period">(2025.06 -- 至今)</span></p>
+                <p class="position"><span data-i18n="research.lab2.position">本科实习生 | 导师：房江博士</span></p>
                 
                 <p><strong>[1] Stylistic Idiosyncrasies of Code Generated by Large Language Models</strong></p>
                 <ul>
-                    <li>本研究提出 CGSD 框架，结合监督对比学习与分类微调，实现对不同 LLM 生成代码的识别。</li>
-                    <li>本人负责数据集的构建与标注、风格特征的提取与分析、框架与实验设计，并独立完成论文撰写工作。</li>
+                    <li data-i18n="research.lab2.project1.desc1">本研究提出 CGSD 框架，结合监督对比学习与分类微调，实现对不同 LLM 生成代码的识别。</li>
+                    <li data-i18n="research.lab2.project1.desc2">本人负责数据集的构建与标注、风格特征的提取与分析、框架与实验设计，并独立完成论文撰写工作。</li>
                 </ul>
                 
                 <p><strong>[2] SAT4RIDS: Self-Supervised Learning Adversarial Training Framework for Robust Network Intrusion Detection System</strong></p>
                 <ul>
-                    <li>本研究提出了一种自监督+对抗训练的网络入侵检测框架，提升了系统在对抗样本下的鲁棒性。</li>
-                    <li>本人负责自监督学习模块的设计、对抗训练策略的构建、实验分析，并参与论文撰写工作。</li>
+                    <li data-i18n="research.lab2.project2.desc1">本研究提出了一种自监督+对抗训练的网络入侵检测框架，提升了系统在对抗样本下的鲁棒性。</li>
+                    <li data-i18n="research.lab2.project2.desc2">本人负责自监督学习模块的设计、对抗训练策略的构建、实验分析，并参与论文撰写工作。</li>
                 </ul>
             </div>
             
             <div class="research-entry">
-                <p><strong>中科院自动化所-复杂系统认知与决策重点实验室</strong> (2026.01 -- 至今)</p>
-                <p class="position">本科实习生 | 导师：黄凯奇教授</p>
+                <p><strong data-i18n="research.lab3.name">中科院自动化所-复杂系统认知与决策重点实验室</strong> <span data-i18n="research.lab3.period">(2026.01 -- 至今)</span></p>
+                <p class="position"><span data-i18n="research.lab3.position">本科实习生 | 导师：黄凯奇教授</span></p>
             </div>
         </div>
     </section>
 
     <!-- 技能 -->
     <section id="skills">
-        <h2>专业能力</h2>
+        <h2 data-i18n="skills.title">专业能力</h2>
         <div class="content">
             <div class="skills-grid">
                 <div class="skill-item">
                     <i class="fas fa-code"></i>
-                    <h3>编程语言</h3>
-                    <p>C/C++、Python、Java<br>SQL、HTML/CSS/JavaScript</p>
+                    <h3 data-i18n="skills.programming.title">编程语言</h3>
+                    <p data-i18n="skills.programming.content">C/C++、Python、Java<br>SQL、HTML/CSS/JavaScript</p>
                 </div>
                 <div class="skill-item">
                     <i class="fas fa-database"></i>
-                    <h3>计算机基础</h3>
-                    <p>数据结构与算法<br>数据库技术、Git版本管理</p>
+                    <h3 data-i18n="skills.computer.title">计算机基础</h3>
+                    <p data-i18n="skills.computer.content">数据结构与算法<br>数据库技术、Git版本管理</p>
                 </div>
                 <div class="skill-item">
                     <i class="fas fa-brain"></i>
-                    <h3>AI/机器学习</h3>
-                    <p>Python核心库<br>模型微调、CNN/RNN/Transformer</p>
+                    <h3 data-i18n="skills.ai.title">AI/机器学习</h3>
+                    <p data-i18n="skills.ai.content">Python核心库<br>模型微调、CNN/RNN/Transformer</p>
                 </div>
                 <div class="skill-item">
                     <i class="fas fa-tools"></i>
-                    <h3>其他技能</h3>
-                    <p>LaTeX、达芬奇剪辑与调色</p>
+                    <h3 data-i18n="skills.other.title">其他技能</h3>
+                    <p data-i18n="skills.other.content">LaTeX、达芬奇剪辑与调色</p>
                 </div>
             </div>
         </div>
@@ -468,66 +485,66 @@
 
     <!-- 荣誉 -->
     <section id="honors">
-        <h2><i class="fas fa-award"></i> 荣誉</h2>
+        <h2><i class="fas fa-award"></i> <span data-i18n="honors.title">荣誉</span></h2>
         <div class="content">
             <div class="honor-list">
                 <div class="honor-item">
                     <i class="fas fa-graduation-cap"></i>
-                    <span>国家奖学金（2023-2024，2024-2025）</span>
+                    <span data-i18n="honors.honor1">国家奖学金（2023-2024，2024-2025）</span>
                 </div>
                 <div class="honor-item">
                     <i class="fas fa-star"></i>
-                    <span>校级三好学生（2023-2024）优秀学生干部（2024-2025）</span>
+                    <span data-i18n="honors.honor2">校级三好学生（2023-2024）优秀学生干部（2024-2025）</span>
                 </div>
                 <div class="honor-item">
                     <i class="fas fa-star"></i>
-                    <span>北京市三好学生（2025-2026）</span>
+                    <span data-i18n="honors.honor3">北京市三好学生（2025-2026）</span>
                 </div>
                 <div class="honor-item">
                     <i class="fas fa-user-graduate"></i>
-                    <span>北京邮电大学优秀团员（2023-2024，2024-2025）</span>
+                    <span data-i18n="honors.honor4">北京邮电大学优秀团员（2023-2024，2024-2025）</span>
                 </div>
                 <div class="honor-item">
                     <i class="fas fa-plane"></i>
-                    <span>成功入选2024 Winter trip，赴英国交流学习</span>
+                    <span data-i18n="honors.honor5">成功入选2024 Winter trip，赴英国交流学习</span>
                 </div>
             </div>
             
             <!-- 证书展示 -->
             <div class="certificates-gallery">
-                <h3><i class="fas fa-certificate"></i> 获奖证书</h3>
+                <h3><i class="fas fa-certificate"></i> <span data-i18n="honors.certificates">获奖证书</span></h3>
                 <div class="gallery-grid">
                     <div class="certificate-item">
                         <img src="images/获奖证书/照片版/国奖.png" alt="国家奖学金证书" onclick="openModal(this)">
-                        <p>国家奖学金证书</p>
+                        <p data-i18n="honors.cert1">国家奖学金证书</p>
                     </div>
                     <div class="certificate-item">
                         <img src="images/获奖证书/照片版/国数竞.jpg" alt="全国大学生数学竞赛一等奖" onclick="openModal(this)">
-                        <p>全国大学生数学竞赛一等奖</p>
+                        <p data-i18n="honors.cert2">全国大学生数学竞赛一等奖</p>
                     </div>
                     <div class="certificate-item">
                         <img src="images/获奖证书/照片版/国二数模.png" alt="全国大学生数学建模竞赛国家二等奖" onclick="openModal(this)">
-                        <p>全国大学生数学建模竞赛国家二等奖</p>
+                        <p data-i18n="honors.cert3">全国大学生数学建模竞赛国家二等奖</p>
                     </div>
                     <div class="certificate-item">
                         <img src="images/获奖证书/照片版/大英赛.jpg" alt="全国大学生英语竞赛三等奖" onclick="openModal(this)">
-                        <p>全国大学生英语竞赛三等奖</p>
+                        <p data-i18n="honors.cert4">全国大学生英语竞赛三等奖</p>
                     </div>
                     <div class="certificate-item">
                         <img src="images/获奖证书/照片版/IET.png" alt="IET MIC最佳海报奖与优秀论文" onclick="openModal(this)">
-                        <p>IET MIC最佳海报奖与优秀论文</p>
+                        <p data-i18n="honors.cert5">IET MIC最佳海报奖与优秀论文</p>
                     </div>
                     <div class="certificate-item">
                         <img src="images/获奖证书/照片版/市数竞.jpg" alt="市级数学竞赛" onclick="openModal(this)">
-                        <p>市级数学竞赛</p>
+                        <p data-i18n="honors.cert6">市级数学竞赛</p>
                     </div>
                     <div class="certificate-item">
                         <img src="images/获奖证书/照片版/省级数模.png" alt="省级数学建模竞赛" onclick="openModal(this)">
-                        <p>省级数学建模竞赛</p>
+                        <p data-i18n="honors.cert7">省级数学建模竞赛</p>
                     </div>
                     <div class="certificate-item">
                         <img src="images/获奖证书/照片版/优秀班集体.jpg" alt="优秀班集体" onclick="openModal(this)">
-                        <p>优秀班集体</p>
+                        <p data-i18n="honors.cert8">优秀班集体</p>
                     </div>
                 </div>
             </div>
@@ -536,18 +553,18 @@
 
     <!-- 其他 -->
     <section id="others">
-        <h2>其他</h2>
+        <h2 data-i18n="others.title">其他</h2>
         <div class="content">
             <ul>
-                <li><strong>学生工作与思想政治：</strong>中国共产党预备党员；团支部书记和班长，多次评选为优秀团支部；校级学生代表，联署提案并多次参与学生代表大会。</li>
-                <li><strong>实践经历：实习与志愿服务：</strong>科大讯飞实习，数学AI模型训练与优化；志愿服务时长累计161小时。</li>
+                <li><strong data-i18n="others.studentWork.title">学生工作与思想政治：</strong><span data-i18n="others.studentWork.content">中国共产党预备党员；团支部书记和班长，多次评选为优秀团支部；校级学生代表，联署提案并多次参与学生代表大会。</span></li>
+                <li><strong data-i18n="others.practice.title">实践经历：</strong><span data-i18n="others.practice.content">科大讯飞实习，数学AI模型训练与优化；志愿服务时长累计161小时。</span></li>
             </ul>
         </div>
     </section>
 
     <!-- 联系方式 -->
     <section id="contact">
-        <h2>联系我</h2>
+        <h2 data-i18n="contact.title">联系我</h2>
         <div class="contact-icons">
             <a href="mailto:liweiyi@bupt.edu.cn" class="contact-item">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -557,7 +574,7 @@
                 <span>liweiyi@bupt.edu.cn</span>
             </a>
             <a href="tel:17201573086" class="contact-item">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="color: #667eea;">
                     <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
                 <span>17201573086</span>
@@ -576,7 +593,7 @@
     </section>
 
     <footer>
-        <p>&copy; 2026 李炜仪 | 最后更新: 2026-01-23</p>
+        <p>&copy; 2026 <span data-i18n="home.name">李炜仪</span> | <span data-i18n="footer.lastUpdate">最后更新</span>: 2026-01-23</p>
     </footer>
 
     <!-- 图片模态框 -->
@@ -585,6 +602,7 @@
         <img class="modal-content" id="modalImage">
     </div>
 
+    <script src="translations.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

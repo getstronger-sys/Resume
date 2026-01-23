@@ -1,12 +1,74 @@
-/* 全局样式 */
+/* 全局样式 - 统一使用Serif字体 */
+* {
+    font-family: Georgia, "Times New Roman", "Noto Serif SC", serif;
+}
+
 body {
-    font-family: "Noto Sans SC", "Arial", sans-serif;
     margin: 0;
     line-height: 1.6;
     scroll-behavior: smooth;
     background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
     background-attachment: fixed;
     min-height: 100vh;
+    color: #333;
+}
+
+/* 标题使用加粗 */
+h1, h2, h3, .hero h1, .publication-title, section h2 {
+    font-weight: bold;
+    color: #1a1a1a;
+}
+
+/* 中文名字 - 大号粗体 */
+.hero h1 {
+    font-weight: bold;
+    font-size: 3em;
+    color: #1a1a1a;
+    margin: 20px 0;
+}
+
+/* 正文 */
+p, li, td, span, div, .content {
+    font-weight: normal;
+    color: #333;
+}
+
+/* 强调文本 */
+strong, b, .bold {
+    font-weight: bold;
+}
+
+/* 链接样式 */
+a {
+    color: #667eea;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #764ba2;
+}
+
+/* 代码链接样式 */
+/* 代码链接样式 */
+.code-link {
+    color: #667eea;
+    text-decoration: underline;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-block;
+    margin: 0 2px;
+}
+
+.code-link:hover {
+    color: #764ba2;
+    text-decoration: underline;
+    transform: translateY(-1px);
+}
+
+.code-link:active {
+    transform: translateY(0);
 }
 
 /* 背景动画 */
@@ -52,9 +114,11 @@ header nav ul {
     display: flex;
     list-style: none;
     justify-content: center;
+    align-items: center;
     padding: 15px;
     margin: 0;
     flex-wrap: wrap;
+    gap: 5px;
 }
 
 header nav ul li {
@@ -101,6 +165,38 @@ header nav ul li a.active {
 
 header nav ul li a.active::before {
     width: 80%;
+}
+
+/* 语言切换按钮 */
+.language-switcher {
+    margin-left: auto;
+}
+
+.lang-btn {
+    background: rgba(102, 126, 234, 0.1);
+    border: 2px solid #667eea;
+    border-radius: 20px;
+    padding: 6px 15px;
+    color: #667eea;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9em;
+}
+
+.lang-btn:hover {
+    background: #667eea;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 3px 10px rgba(102, 126, 234, 0.3);
+}
+
+#currentLang {
+    color: #667eea;
+}
+
+.lang-btn:hover #currentLang {
+    color: white;
 }
 
 /* 分区 */
@@ -283,6 +379,76 @@ section h2::after {
 .content ul {
     list-style-type: disc;
     padding-left: 20px;
+}
+
+/* 教育背景头部布局 */
+.education-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+    margin-bottom: 20px;
+}
+
+.education-image {
+    flex-shrink: 0;
+}
+
+.bupt-logo {
+    max-width: 200px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.bupt-logo:hover {
+    transform: scale(1.05);
+}
+
+.education-info {
+    flex: 1;
+}
+
+.education-info p {
+    margin-bottom: 10px;
+}
+
+.education-title-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 10px;
+    gap: 15px;
+}
+
+.education-title-row strong {
+    display: inline-block;
+    line-height: 1.5;
+    flex: 1;
+}
+
+.education-period {
+    color: #666;
+    font-weight: normal;
+    font-size: 0.95em;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.education-info ul {
+    margin-top: 10px;
+}
+
+/* 响应式设计 - 小屏幕时图片和文字垂直排列 */
+@media (max-width: 768px) {
+    .education-header {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .bupt-logo {
+        max-width: 150px;
+    }
 }
 
 /* 课程表格样式 */
@@ -486,6 +652,24 @@ section h2::after {
     margin: 0 0 15px 0;
     line-height: 1.6;
     flex: 1;
+}
+
+/* 只为"Weiyi Li"添加下划线 */
+.publication-authors strong.author-name {
+    text-decoration: underline;
+}
+
+/* 证书链接样式 */
+.cert-link {
+    color: #667eea;
+    text-decoration: underline;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.cert-link:hover {
+    color: #764ba2;
+    text-decoration: underline;
 }
 
 .publication-authors sup {
