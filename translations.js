@@ -21,6 +21,9 @@ const translations = {
         footer: {
             lastUpdate: "最后更新"
         },
+        modal: {
+            selectLanguage: "请选择语言 / Please Select Language"
+        },
         education: {
             title: "教育背景",
             university: "北京邮电大学 | 智能科学与技术",
@@ -143,11 +146,11 @@ const translations = {
             title: "其他",
             studentWork: {
                 title: "学生工作与思想政治：",
-                content: "中国共产党预备党员；团支部书记和班长，多次评选为优秀团支部；校级学生代表，联署提案并多次参与学生代表大会。"
+                content: "中国共产党预备党员<br>团支部书记和班长，多次评选为优秀团支部<br>校级学生代表，联署提案并多次参与学生代表大会"
             },
             practice: {
                 title: "实践经历：",
-                content: "科大讯飞实习，数学AI模型训练与优化；志愿服务时长累计161小时。"
+                content: "<a href=\"images/实习证明.pdf\" target=\"_blank\" class=\"cert-link\">科大讯飞实习</a>，数学AI模型训练与优化；<a href=\"images/志愿时长.pdf\" target=\"_blank\" class=\"cert-link\">志愿服务时长</a>累计161小时。"
             }
         },
         contact: {
@@ -199,6 +202,9 @@ const translations = {
         },
         footer: {
             lastUpdate: "Last Updated"
+        },
+        modal: {
+            selectLanguage: "请选择语言 / Please Select Language"
         },
         education: {
             title: "Education",
@@ -322,11 +328,11 @@ const translations = {
             title: "Others",
             studentWork: {
                 title: "Student Work & Ideological-Political:",
-                content: "Probationary member of the Communist Party of China; Secretary and class monitor of the Youth League branch, repeatedly selected as an excellent Youth League branch; School-level student representative, co-signed proposals and participated in student representative meetings multiple times."
+                content: "Probationary member of the Communist Party of China<br>Secretary and class monitor of the Youth League branch, repeatedly selected as an excellent Youth League branch<br>School-level student representative, co-signed proposals and participated in student representative meetings multiple times"
             },
             practice: {
                 title: "Practical Experience:",
-                content: "iFlytek internship, mathematical AI model training and optimization; cumulative volunteer service hours: 161 hours."
+                content: "<a href=\"images/实习证明.pdf\" target=\"_blank\" class=\"cert-link\">iFlytek internship</a>, mathematical AI model training and optimization; cumulative <a href=\"images/志愿时长.pdf\" target=\"_blank\" class=\"cert-link\">volunteer service hours</a>: 161 hours."
             }
         },
         contact: {
@@ -414,9 +420,36 @@ function toggleLanguage() {
     updateLanguage(newLang);
 }
 
+// 选择语言并关闭模态框
+function selectLanguage(lang) {
+    updateLanguage(lang);
+    closeLanguageModal();
+}
+
+// 关闭语言选择模态框
+function closeLanguageModal() {
+    const modal = document.getElementById('languageModal');
+    if (modal) {
+        modal.classList.remove('show');
+        localStorage.setItem('languageSelected', 'true');
+    }
+}
+
 // 页面加载时应用保存的语言
 document.addEventListener('DOMContentLoaded', () => {
-    updateLanguage(currentLang);
+    // 检查是否已经选择过语言
+    const languageSelected = localStorage.getItem('languageSelected');
+    
+    // 如果没有选择过语言，显示语言选择提示框
+    if (!languageSelected) {
+        const modal = document.getElementById('languageModal');
+        if (modal) {
+            modal.classList.add('show');
+        }
+    } else {
+        // 如果已经选择过，直接应用保存的语言
+        updateLanguage(currentLang);
+    }
     
     // 绑定语言切换按钮
     const langToggle = document.getElementById('langToggle');

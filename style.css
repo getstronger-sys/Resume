@@ -672,6 +672,95 @@ section h2::after {
     text-decoration: underline;
 }
 
+/* 其他部分样式 */
+#others .content ul li {
+    margin-bottom: 15px;
+    line-height: 1.8;
+}
+
+#others .content ul li strong {
+    display: inline-block;
+    margin-right: 5px;
+    vertical-align: top;
+}
+
+#others .content ul li span {
+    display: inline-block;
+    vertical-align: top;
+}
+
+/* 语言选择提示框 */
+.language-modal {
+    display: none;
+    position: fixed;
+    z-index: 10000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    animation: fadeIn 0.3s ease;
+}
+
+.language-modal.show {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.language-modal-content {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    max-width: 400px;
+    animation: slideDown 0.3s ease;
+}
+
+.language-modal-content h2 {
+    margin: 0 0 30px 0;
+    color: #333;
+    font-size: 1.5em;
+}
+
+.language-modal-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.lang-modal-btn {
+    padding: 15px 40px;
+    font-size: 1.1em;
+    border: 2px solid #667eea;
+    background: white;
+    color: #667eea;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+.lang-modal-btn:hover {
+    background: #667eea;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
 .publication-authors sup {
     font-size: 0.8em;
     vertical-align: super;
