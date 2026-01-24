@@ -80,15 +80,18 @@ const translations = {
             title: "项目经历",
             project1: {
                 title: "[1] 不良言论识别模型",
-                content: "基于 Llama-13B 使用 LoRA 进行轻量微调，设计五维恶意值向量输出并通过雷达图可视化，使用 INT8 量化生成轻量化模型；负责数据集构建、标签体系设计与模型训练。"
+                content: "基于 Llama-13B 使用 LoRA 进行轻量微调，设计五维恶意值向量输出并通过雷达图可视化，使用 INT8 量化生成轻量化模型；负责数据集构建、标签体系设计与模型训练。",
+                videoBtn: "观看视频"
             },
             project2: {
                 title: "[2] \"智体无界 — 基于类脑架构的运动智能体\"（荣获中国国际大学生创新大赛铜奖）",
-                content: "基于国家乒乓球运动员数据集，融合图神经网络、时空双流模型实现毫米级动作量化与智能技战术分析；负责动作识别与分割、动作分析逻辑设计与参数优化。"
+                content: "基于国家乒乓球运动员数据集，融合图神经网络、时空双流模型实现毫米级动作量化与智能技战术分析；负责动作识别与分割、动作分析逻辑设计与参数优化。",
+                videoBtn: "观看视频"
             },
             project3: {
                 title: "[3] 配备2D激光雷达的迷宫导航与建图自主移动机器人（团队综合成绩位列年级前十）",
-                content: "Design&Build 课程项目，代码：<a href=\"https://github.com/getstronger-sys/Radar-car\" target=\"_blank\" class=\"code-link\">配备2D激光雷达的迷宫导航与建图自主移动机器人</a>。作为项目负责人，独立完成 SLAM 实时建图、DWA 局部避障及 A* 路径规划，合作完成传感器与控制硬件对接。"
+                content: "Design&Build 课程项目，代码：<a href=\"https://github.com/getstronger-sys/Radar-car\" target=\"_blank\" class=\"code-link\">配备2D激光雷达的迷宫导航与建图自主移动机器人</a>。作为项目负责人，独立完成 SLAM 实时建图、DWA 局部避障及 A* 路径规划，合作完成传感器与控制硬件对接。",
+                videoBtn: "观看视频"
             },
             project4: {
                 title: "[4] 北京地铁查询系统（独立开发）",
@@ -138,7 +141,7 @@ const translations = {
             cert3: "全国大学生数学建模竞赛国家二等奖",
             cert4: "全国大学生英语竞赛三等奖",
             cert5: "IET MIC最佳海报奖与优秀论文",
-            cert6: "市级数学竞赛",
+            cert6: "ICT二等奖",
             cert7: "省级数学建模竞赛",
             cert8: "优秀班集体"
         },
@@ -146,7 +149,7 @@ const translations = {
             title: "其他",
             studentWork: {
                 title: "学生工作与思想政治：",
-                content: "中国共产党预备党员<br>团支部书记和班长，多次评选为优秀团支部<br>校级学生代表，联署提案并多次参与学生代表大会"
+                content: "中国共产党预备党员<br>团支部书记和班长，<a href=\"#\" onclick=\"event.preventDefault(); scrollToCertificate('优秀班集体'); return false;\" class=\"cert-link\">多次评选为优秀团支部</a><br>校级学生代表，联署提案并多次参与学生代表大会"
             },
             practice: {
                 title: "实践经历：",
@@ -262,15 +265,18 @@ const translations = {
             title: "Projects",
             project1: {
                 title: "[1] Harmful Speech Detection Model",
-                content: "Lightweight fine-tuning of Llama-13B using LoRA, designed five-dimensional malicious value vector output with radar chart visualization, generated lightweight model using INT8 quantization; responsible for dataset construction, label system design, and model training."
+                content: "Lightweight fine-tuning of Llama-13B using LoRA, designed five-dimensional malicious value vector output with radar chart visualization, generated lightweight model using INT8 quantization; responsible for dataset construction, label system design, and model training.",
+                videoBtn: "Watch Video"
             },
             project2: {
                 title: "[2] \"Boundless Intelligence — Brain-Inspired Architecture Sports Agent\" (Bronze Award, China International College Students Innovation Competition)",
-                content: "Based on national table tennis athlete dataset, integrated graph neural networks and spatiotemporal dual-stream models to achieve millimeter-level action quantification and intelligent tactical analysis; responsible for action recognition and segmentation, action analysis logic design, and parameter optimization."
+                content: "Based on national table tennis athlete dataset, integrated graph neural networks and spatiotemporal dual-stream models to achieve millimeter-level action quantification and intelligent tactical analysis; responsible for action recognition and segmentation, action analysis logic design, and parameter optimization.",
+                videoBtn: "Watch Video"
             },
             project3: {
                 title: "[3] 2D LiDAR-Based Maze Navigation and Mapping Autonomous Mobile Robot (Team ranked top 10 in grade)",
-                content: "Design&Build course project, code: <a href=\"https://github.com/getstronger-sys/Radar-car\" target=\"_blank\" class=\"code-link\">2D LiDAR-Based Maze Navigation and Mapping Autonomous Mobile Robot</a>. As project leader, independently completed SLAM real-time mapping, DWA local obstacle avoidance, and A* path planning, collaborated on sensor and control hardware integration."
+                content: "Design&Build course project, code: <a href=\"https://github.com/getstronger-sys/Radar-car\" target=\"_blank\" class=\"code-link\">2D LiDAR-Based Maze Navigation and Mapping Autonomous Mobile Robot</a>. As project leader, independently completed SLAM real-time mapping, DWA local obstacle avoidance, and A* path planning, collaborated on sensor and control hardware integration.",
+                videoBtn: "Watch Video"
             },
             project4: {
                 title: "[4] Beijing Metro Query System (Independent Development)",
@@ -320,7 +326,7 @@ const translations = {
             cert3: "National College Students Mathematical Modeling Competition National Second Prize",
             cert4: "National College Students English Competition Third Prize",
             cert5: "IET MIC Best Poster Award and Excellent Paper",
-            cert6: "Municipal Mathematics Competition",
+            cert6: "ICT Second Prize",
             cert7: "Provincial Mathematical Modeling Competition",
             cert8: "Outstanding Class Collective"
         },
@@ -328,7 +334,7 @@ const translations = {
             title: "Others",
             studentWork: {
                 title: "Student Work & Ideological-Political:",
-                content: "Probationary member of the Communist Party of China<br>Secretary and class monitor of the Youth League branch, repeatedly selected as an excellent Youth League branch<br>School-level student representative, co-signed proposals and participated in student representative meetings multiple times"
+                content: "Probationary member of the Communist Party of China<br>Secretary and class monitor of the Youth League branch, <a href=\"#\" onclick=\"event.preventDefault(); scrollToCertificate('优秀班集体'); return false;\" class=\"cert-link\">repeatedly selected as an excellent Youth League branch</a><br>School-level student representative, co-signed proposals and participated in student representative meetings multiple times"
             },
             practice: {
                 title: "Practical Experience:",

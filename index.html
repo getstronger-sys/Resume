@@ -348,21 +348,36 @@
         <h2 data-i18n="projects.title">项目经历</h2>
         <div class="content">
             <div class="project-item">
-                <h3 data-i18n="projects.project1.title">[1] 不良言论识别模型</h3>
+                <h3 class="project-title-with-btn">
+                    <span data-i18n="projects.project1.title">[1] 不良言论识别模型</span>
+                    <button class="btn-video" onclick="openVideoModal('videos/不良言论.mp4')">
+                        <i class="fas fa-play-circle"></i> <span data-i18n="projects.project1.videoBtn">观看项目介绍视频</span>
+                    </button>
+                </h3>
                 <ul>
                     <li data-i18n="projects.project1.content">基于 Llama-13B 使用 LoRA 进行轻量微调，设计五维恶意值向量输出并通过雷达图可视化，使用 INT8 量化生成轻量化模型；负责数据集构建、标签体系设计与模型训练。</li>
                 </ul>
             </div>
             
             <div class="project-item">
-                <h3 data-i18n="projects.project2.title">[2] "智体无界 — 基于类脑架构的运动智能体"（荣获中国国际大学生创新大赛铜奖）</h3>
+                <h3 class="project-title-with-btn">
+                    <span data-i18n="projects.project2.title">[2] "智体无界 — 基于类脑架构的运动智能体"（荣获中国国际大学生创新大赛铜奖）</span>
+                    <button class="btn-video" onclick="openVideoModal('videos/视频.mp4')">
+                        <i class="fas fa-play-circle"></i> <span data-i18n="projects.project2.videoBtn">观看项目介绍视频</span>
+                    </button>
+                </h3>
                 <ul>
                     <li data-i18n="projects.project2.content">基于国家乒乓球运动员数据集，融合图神经网络、时空双流模型实现毫米级动作量化与智能技战术分析；负责动作识别与分割、动作分析逻辑设计与参数优化。</li>
                 </ul>
             </div>
             
             <div class="project-item">
-                <h3 data-i18n="projects.project3.title">[3] 配备2D激光雷达的迷宫导航与建图自主移动机器人（团队综合成绩位列年级前十）</h3>
+                <h3 class="project-title-with-btn">
+                    <span data-i18n="projects.project3.title">[3] 配备2D激光雷达的迷宫导航与建图自主移动机器人（团队综合成绩位列年级前十）</span>
+                    <button class="btn-video" onclick="openVideoModal('videos/61.mp4')">
+                        <i class="fas fa-play-circle"></i> <span data-i18n="projects.project3.videoBtn">观看项目介绍视频</span>
+                    </button>
+                </h3>
                 <ul>
                     <li data-i18n="projects.project3.content">Design&Build 课程项目，代码：<a href="https://github.com/getstronger-sys/Radar-car" target="_blank" class="code-link">查看代码</a>。作为项目负责人，独立完成 SLAM 实时建图、DWA 局部避障及 A* 路径规划，合作完成传感器与控制硬件对接。</li>
                 </ul>
@@ -389,19 +404,19 @@
         <h2><i class="fas fa-trophy"></i> <span data-i18n="competitions.title">竞赛</span></h2>
         <div class="content">
             <div class="competition-list">
-                <div class="competition-item">
+                <div class="competition-item" onclick="scrollToCertificate('全国大学生数学竞赛一等奖')" style="cursor: pointer;">
                     <i class="fas fa-medal" style="color: #FFD700;"></i>
                     <span data-i18n="competitions.comp1">2024 全国大学生数学竞赛一等奖</span>
                 </div>
-                <div class="competition-item">
+                <div class="competition-item" onclick="scrollToCertificate('全国大学生数学建模竞赛国家二等奖')" style="cursor: pointer;">
                     <i class="fas fa-medal" style="color: #C0C0C0;"></i>
                     <span data-i18n="competitions.comp2">2025 全国大学生数学建模竞赛国家二等奖</span>
                 </div>
-                <div class="competition-item">
+                <div class="competition-item" onclick="scrollToCertificate('ICT二等奖')" style="cursor: pointer;">
                     <i class="fas fa-medal" style="color: #CD7F32;"></i>
                     <span data-i18n="competitions.comp3">2024 首届高校ICT产教融合创新大赛二等奖</span>
                 </div>
-                <div class="competition-item">
+                <div class="competition-item" onclick="scrollToCertificate('全国大学生英语竞赛三等奖')" style="cursor: pointer;">
                     <i class="fas fa-medal" style="color: #CD7F32;"></i>
                     <span data-i18n="competitions.comp4">2024 全国大学生英语竞赛三等奖</span>
                 </div>
@@ -488,7 +503,7 @@
         <h2><i class="fas fa-award"></i> <span data-i18n="honors.title">荣誉</span></h2>
         <div class="content">
             <div class="honor-list">
-                <div class="honor-item">
+                <div class="honor-item" onclick="scrollToCertificate('国家奖学金证书')" style="cursor: pointer;">
                     <i class="fas fa-graduation-cap"></i>
                     <span data-i18n="honors.honor1">国家奖学金（2023-2024，2024-2025）</span>
                 </div>
@@ -535,8 +550,8 @@
                         <p data-i18n="honors.cert5">IET MIC最佳海报奖与优秀论文</p>
                     </div>
                     <div class="certificate-item">
-                        <img src="images/获奖证书/照片版/市数竞.jpg" alt="市级数学竞赛" onclick="openModal(this)">
-                        <p data-i18n="honors.cert6">市级数学竞赛</p>
+                        <img src="images/获奖证书/照片版/ICT.png" alt="ICT二等奖" onclick="openModal(this)">
+                        <p data-i18n="honors.cert6">ICT二等奖</p>
                     </div>
                     <div class="certificate-item">
                         <img src="images/获奖证书/照片版/省级数模.png" alt="省级数学建模竞赛" onclick="openModal(this)">
@@ -611,6 +626,15 @@
     <div id="imageModal" class="modal">
         <span class="close">&times;</span>
         <img class="modal-content" id="modalImage">
+    </div>
+
+    <!-- 视频模态框 -->
+    <div id="videoModal" class="modal">
+        <span class="close-video">&times;</span>
+        <video class="modal-content" id="modalVideo" controls>
+            <source id="videoSource" src="" type="video/mp4">
+            您的浏览器不支持视频播放。
+        </video>
     </div>
 
     <script src="translations.js"></script>

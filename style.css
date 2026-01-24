@@ -449,6 +449,16 @@ section h2::after {
     .bupt-logo {
         max-width: 150px;
     }
+    
+    .project-title-with-btn {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .project-title-with-btn .btn-video {
+        width: 100%;
+        justify-content: center;
+    }
 }
 
 /* 课程表格样式 */
@@ -781,7 +791,7 @@ section h2::after {
     margin-top: auto;
 }
 
-.btn-pdf, .btn-code {
+.btn-pdf, .btn-code, .btn-video {
     padding: 8px 16px;
     border-radius: 6px;
     text-decoration: none;
@@ -791,6 +801,8 @@ section h2::after {
     display: inline-flex;
     align-items: center;
     gap: 6px;
+    border: none;
+    cursor: pointer;
 }
 
 .btn-pdf {
@@ -813,6 +825,17 @@ section h2::after {
     background: #2980b9;
     transform: translateY(-2px);
     box-shadow: 0 4px 10px rgba(52, 152, 219, 0.3);
+}
+
+.btn-video {
+    background: #c5a3e6;
+    color: white;
+}
+
+.btn-video:hover {
+    background: #b19cd9;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(197, 163, 230, 0.3);
 }
 
 .publication-note {
@@ -884,6 +907,24 @@ section h2::after {
 
 .project-item:hover h3 {
     color: #667eea;
+}
+
+.project-title-with-btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.project-title-with-btn span {
+    flex: 1;
+    min-width: 0;
+}
+
+.project-title-with-btn .btn-video {
+    flex-shrink: 0;
+    margin: 0;
 }
 
 .project-item .project-meta {
@@ -1169,6 +1210,29 @@ section h2 i {
     margin-top: 50px;
     border-radius: 10px;
     animation: zoomIn 0.3s ease;
+}
+
+#modalVideo {
+    width: 100%;
+    max-width: 1200px;
+    height: auto;
+    background: #000;
+}
+
+.close-video {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    z-index: 10001;
+}
+
+.close-video:hover {
+    color: #fff;
 }
 
 @keyframes zoomIn {
