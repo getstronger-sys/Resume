@@ -675,11 +675,27 @@ section h2::after {
     text-decoration: underline;
     font-weight: 500;
     transition: color 0.3s ease;
+    position: relative;
+    display: inline-block;
+    padding-right: 20px;
 }
 
 .cert-link:hover {
     color: #764ba2;
     text-decoration: underline;
+}
+
+.cert-link:hover::after {
+    content: '\f25a'; /* Font Awesome hand-pointer icon */
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    position: absolute;
+    right: 0;
+    color: #667eea;
+    font-size: 0.9em;
+    animation: fadeIn 0.3s ease;
+    margin-left: 5px;
+    line-height: 1;
 }
 
 /* 其他部分样式 */
@@ -1006,6 +1022,7 @@ footer {
     gap: 15px;
     transition: all 0.3s ease;
     border-left: 4px solid transparent;
+    position: relative;
 }
 
 .competition-item:hover, .honor-item:hover {
@@ -1013,6 +1030,21 @@ footer {
     border-left-color: #667eea;
     transform: translateX(5px);
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 为可点击的competition-item和honor-item添加点击图标 */
+.competition-item[onclick]:hover::after,
+.honor-item[onclick]:hover::after {
+    content: '\f25a'; /* Font Awesome hand-pointer icon */
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    position: absolute;
+    right: 20px;
+    color: #667eea;
+    font-size: 1.2em;
+    animation: fadeIn 0.3s ease;
+    pointer-events: none;
+    line-height: 1;
 }
 
 .competition-item i, .honor-item i {
