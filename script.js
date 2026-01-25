@@ -37,20 +37,32 @@ if (closeBtn) {
 }
 
 
-// 从竞赛列表跳转到对应的证书图片
+// 竞赛项 → 证书图片路径映射（只展示图片，不跳转）
+const competitionCertImages = {
+    "全国大学生数学竞赛一等奖": "images/获奖证书/照片版/国数竞.jpg",
+    "全国大学生数学建模竞赛国家二等奖": "images/获奖证书/照片版/国二数模.png",
+    "ICT二等奖": "images/获奖证书/照片版/ICT.png",
+    "全国大学生英语竞赛三等奖": "images/获奖证书/照片版/大英赛.jpg"
+};
+
+function openCertificateModal(certKey) {
+    const path = competitionCertImages[certKey];
+    if (!path) return;
+    const modal = document.getElementById("imageModal");
+    const modalImg = document.getElementById("modalImage");
+    modal.style.display = "block";
+    modalImg.src = path;
+}
+
+// 从荣誉等列表跳转到对应的证书图片（滚动 + 打开模态框，保留给“优秀班集体”等链接用）
 function scrollToCertificate(certAlt) {
-    // 滚动到荣誉部分
     const honorsSection = document.getElementById("honors");
     if (honorsSection) {
         honorsSection.scrollIntoView({ behavior: "smooth", block: "start" });
-        
-        // 延迟一点时间，等待滚动完成后再查找并点击图片
         setTimeout(() => {
-            // 查找对应alt属性的图片
             const certificateImages = document.querySelectorAll("#honors .certificate-item img");
             certificateImages.forEach(img => {
                 if (img.alt === certAlt) {
-                    // 触发图片的点击事件来打开模态框
                     openModal(img);
                 }
             });
