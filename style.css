@@ -810,7 +810,7 @@ section h2::after {
 .btn-pdf, .btn-code, .btn-video {
     padding: 8px 16px;
     border-radius: 6px;
-    text-decoration: none;
+    text-decoration: none !important;
     font-size: 0.9em;
     font-weight: 500;
     transition: all 0.3s ease;
@@ -819,22 +819,26 @@ section h2::after {
     gap: 6px;
     border: none;
     cursor: pointer;
+    color: white !important;
 }
 
 .btn-pdf {
-    background: #e74c3c;
-    color: white;
+    background: #c5a3e6;
 }
 
 .btn-pdf:hover {
-    background: #c0392b;
+    background: #b19cd9;
     transform: translateY(-2px);
-    box-shadow: 0 4px 10px rgba(231, 76, 60, 0.3);
+    box-shadow: 0 4px 10px rgba(197, 163, 230, 0.3);
+    text-decoration: none !important;
+}
+
+.btn-pdf i {
+    color: white !important;
 }
 
 .btn-code {
     background: #3498db;
-    color: white;
 }
 
 .btn-code:hover {
@@ -845,7 +849,6 @@ section h2::after {
 
 .btn-video {
     background: #c5a3e6;
-    color: white;
 }
 
 .btn-video:hover {

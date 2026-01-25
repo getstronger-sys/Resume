@@ -95,11 +95,13 @@ const translations = {
             },
             project4: {
                 title: "[4] 北京地铁查询系统（独立开发）",
-                content: "数据结构与算法课程设计，代码：<a href=\"https://github.com/getstronger-sys/Beijing-Metro-Information-Query-System\" target=\"_blank\" class=\"code-link\">北京地铁查询系统</a>。实现基于邻接表+最小堆优化的双策略路径规划，线路级剪枝提升查询效率30%，整合真实时刻表数据实现动态线路管理与实时发车模拟。"
+                content: "数据结构与算法课程设计，代码：<a href=\"https://github.com/getstronger-sys/Beijing-Metro-Information-Query-System\" target=\"_blank\" class=\"code-link\">北京地铁查询系统</a>。实现基于邻接表+最小堆优化的双策略路径规划，线路级剪枝提升查询效率30%，整合真实时刻表数据实现动态线路管理与实时发车模拟。",
+                reportBtn: "查看报告"
             },
             project5: {
                 title: "[5] 工程技术学会（IET）颁发的2025年模型国际会议（MIC）最佳海报奖与优秀论文",
-                content: "论文\"Technology-Driven Sports Digital Twin: Human-Machine Collaborative Olympic Strategic Decision System\"提出面向奥运会的战略决策框架，结合 K-means 聚类、时间序列预测与马尔可夫模型实现奖牌分布预测与跨国训练优化。"
+                content: "论文\"Technology-Driven Sports Digital Twin: Human-Machine Collaborative Olympic Strategic Decision System\"提出面向奥运会的战略决策框架，结合 K-means 聚类、时间序列预测与马尔可夫模型实现奖牌分布预测与跨国训练优化。",
+                posterBtn: "观看海报"
             }
         },
         competitions: {
@@ -280,11 +282,13 @@ const translations = {
             },
             project4: {
                 title: "[4] Beijing Metro Query System (Independent Development)",
-                content: "Data Structures and Algorithms course design, code: <a href=\"https://github.com/getstronger-sys/Beijing-Metro-Information-Query-System\" target=\"_blank\" class=\"code-link\">Beijing Metro Query System</a>. Implemented dual-strategy path planning based on adjacency list + min-heap optimization, improved query efficiency by 30% through route-level pruning, integrated real-time schedule data for dynamic route management and real-time departure simulation."
+                content: "Data Structures and Algorithms course design, code: <a href=\"https://github.com/getstronger-sys/Beijing-Metro-Information-Query-System\" target=\"_blank\" class=\"code-link\">Beijing Metro Query System</a>. Implemented dual-strategy path planning based on adjacency list + min-heap optimization, improved query efficiency by 30% through route-level pruning, integrated real-time schedule data for dynamic route management and real-time departure simulation.",
+                reportBtn: "View Report"
             },
             project5: {
                 title: "[5] IET MIC 2025 Best Poster Award and Excellent Paper",
-                content: "Paper \"Technology-Driven Sports Digital Twin: Human-Machine Collaborative Olympic Strategic Decision System\" proposes an Olympic-oriented strategic decision framework, combining K-means clustering, time series prediction, and Markov models to achieve medal distribution prediction and cross-national training optimization."
+                content: "Paper \"Technology-Driven Sports Digital Twin: Human-Machine Collaborative Olympic Strategic Decision System\" proposes an Olympic-oriented strategic decision framework, combining K-means clustering, time series prediction, and Markov models to achieve medal distribution prediction and cross-national training optimization.",
+                posterBtn: "View Poster"
             }
         },
         competitions: {
