@@ -169,7 +169,7 @@ const translations = {
         },
         courses: {
             course1: "计算导论与程序设计课程设计",
-            course2: "高等数学A(上)",
+            course2: "高等数学A",
             course3: "数据结构",
             course4: "形式语言与自动机",
             course5: "Python程序设计",
@@ -184,6 +184,8 @@ const translations = {
             course14: "JAVA高级语言程序设计",
             course15: "线性代数",
             course16: "数据库系统",
+            course17: "操作系统",
+            course18: "机器学习",
             typeRequired: "必修",
             typeElective: "选修"
         }
@@ -356,7 +358,7 @@ const translations = {
         },
         courses: {
             course1: "Introduction to Computing and Programming Course Design",
-            course2: "Advanced Mathematics A (Part 1)",
+            course2: "Advanced Mathematics A",
             course3: "Data Structures",
             course4: "Formal Languages and Automata",
             course5: "Python Programming",
@@ -371,6 +373,8 @@ const translations = {
             course14: "JAVA Advanced Language Programming",
             course15: "Linear Algebra",
             course16: "Database Systems",
+            course17: "Operating Systems",
+            course18: "Machine Learning",
             typeRequired: "Required",
             typeElective: "Elective"
         }
