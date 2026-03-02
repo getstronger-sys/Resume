@@ -131,6 +131,7 @@ const translations = {
             title: "竞赛",
             comp1: "2024 全国大学生数学竞赛一等奖",
             comp2: "2025 全国大学生数学建模竞赛国家二等奖",
+            comp2WorkBtn: "查看作品",
             comp3: "2024 首届高校ICT产教融合创新大赛二等奖",
             comp4: "2024 全国大学生英语竞赛三等奖"
         },
@@ -343,6 +344,7 @@ const translations = {
             title: "Competitions",
             comp1: "2024 National College Students Mathematics Competition First Prize",
             comp2: "2025 National College Students Mathematical Modeling Competition National Second Prize",
+            comp2WorkBtn: "View Work",
             comp3: "2024 First University ICT Industry-Education Integration Innovation Competition Second Prize",
             comp4: "2024 National College Students English Competition Third Prize"
         },
