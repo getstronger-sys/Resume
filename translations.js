@@ -28,8 +28,8 @@ const translations = {
             title: "教育背景",
             university: "北京邮电大学 | 智能科学与技术",
             period: "(2023.09 -- 2027.06)",
-            gpa: "GPA: 3.87/4.0 | 加权平均分: 93.21/100",
-            rank: "专业排名: 3/96（3.1%）",
+            gpa: "GPA: 3.88/4.0 | 加权平均分: 93.45/100",
+            rank: "专业排名: 2/96（2.1%）",
             courses: "优势课程"
         },
         publications: {
@@ -241,8 +241,8 @@ const translations = {
             title: "Education",
             university: "Beijing University of Posts and Telecommunications | Intelligent Science and Technology",
             period: "(2023.09 -- 2027.06)",
-            gpa: "GPA: 3.87/4.0 | Weighted Average: 93.21/100",
-            rank: "Major Rank: 3/96 (3.1%)",
+            gpa: "GPA: 3.88/4.0 | Weighted Average: 93.45/100",
+            rank: "Major Rank: 2/96 (2.1%)",
             courses: "Key Courses"
         },
         publications: {
