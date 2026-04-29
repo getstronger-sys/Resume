@@ -168,8 +168,10 @@ const translations = {
             cert4: "全国大学生英语竞赛三等奖",
             cert5: "IET MIC最佳海报奖与优秀论文",
             cert6: "ICT二等奖",
-            cert7: "省级数学建模竞赛",
-            cert8: "优秀班集体"
+            cert7: "全国大学生数学建模竞赛国家二等奖",
+            cert8: "优秀班集体",
+            cert9: "北京市三好学生证书",
+            cert10: "国家奖学金证书（2024-2025）"
         },
         others: {
             title: "其他",
@@ -381,8 +383,10 @@ const translations = {
             cert4: "National College Students English Competition Third Prize",
             cert5: "IET MIC Best Poster Award and Excellent Paper",
             cert6: "ICT Second Prize",
-            cert7: "Provincial Mathematical Modeling Competition",
-            cert8: "Outstanding Class Collective"
+            cert7: "National College Students Mathematical Modeling Competition National Second Prize",
+            cert8: "Outstanding Class Collective",
+            cert9: "Beijing Outstanding Student Certificate",
+            cert10: "National Scholarship Certificate (2024-2025)"
         },
         others: {
             title: "Others",
