@@ -72,7 +72,7 @@ const translations = {
                 period: "(2024.06 -- 至今)",
                 position: "本科实习生 | 导师：南国顺教授",
                 project1: {
-                    title: "[1] When Contrastive Decoding Teaches Time: Annotation-Free RL for Reasoning over Temporal Dynamics（ICML, Under Review）",
+                    title: "[1] When Contrastive Decoding Teaches Time: Annotation-Free RL for Reasoning over Temporal Dynamics（TPAMI, Under Review）",
                     desc1: "项目描述：针对多模态大模型在视频时序建模中因果逻辑不一致及人工构建标注信号成本高的问题，本项目提出基于对比解码 + GRPO 强化学习的框架，在正序与反序视频中增强因果信号，实现动态视频任务的因果一致性与时序敏感性提升，方法在无标注情况下达到 SOTA 性能。",
                     desc2: "个人贡献：负责文献调研与综述，系统梳理视频时序建模前沿方法与技术路线；收集、清洗并整合多源视频数据集（RTime-QA、TempCompass、MVBench、TemporalQA）；开发不同模型推理脚本（VideoLLaVA-7B、MiniCPM-V-2.6-8B、TimeChat）及 GPT-3 评测脚本。代码可通过 <a href=\"https://anonymous.4open.science/r/test-G15b7423-117/README.md\" target=\"_blank\">此链接</a> 获取。"
                 }
@@ -287,7 +287,7 @@ const translations = {
                 period: "(2024.06 -- Present)",
                 position: "Undergraduate Intern | Advisor: Prof. Guoshun Nan",
                 project1: {
-                    title: "[1] When Contrastive Decoding Teaches Time: Annotation-Free RL for Reasoning over Temporal Dynamics (ICML, Under Review)",
+                    title: "[1] When Contrastive Decoding Teaches Time: Annotation-Free RL for Reasoning over Temporal Dynamics (TPAMI, Under Review)",
                     desc1: "Project Description: Addressing the inconsistent causal logic in video temporal modeling by multimodal large models and the high cost of manually constructed annotation signals, this project proposes a framework based on contrastive decoding + GRPO reinforcement learning, enhancing causal signals in forward and reverse-ordered videos to achieve improved causal consistency and temporal sensitivity for dynamic video tasks, achieving SOTA performance without annotations.",
                     desc2: "My Contribution: Responsible for literature review and survey, systematically organizing frontier methods and technical routes in video temporal modeling; collected, cleaned, and integrated multi-source video datasets (RTime-QA, TempCompass, MVBench, TemporalQA); developed inference scripts for different models (VideoLLaVA-7B, MiniCPM-V-2.6-8B, TimeChat) and GPT-3 evaluation scripts. Code is available via <a href=\"https://anonymous.4open.science/r/test-G15b7423-117/README.md\" target=\"_blank\">this link</a>."
                 }
