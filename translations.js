@@ -15,7 +15,7 @@ const translations = {
         },
         home: {
             name: "李炜仪",
-            research: "研究方向：多模态大语言模型与多智能体推理 / 人工智能应用",
+            research: "研究方向：大模型与智能体安全 / 可验证行为与强化学习对齐",
             personalPage: "个人主页"
         },
         footer: {
@@ -231,7 +231,7 @@ const translations = {
         },
         home: {
             name: "Weiyi Li",
-            research: "Research Interests: Multimodal Large Language Models & Multi-Agent Reasoning / AI Applications"
+            research: "Research Interests: LLM & Agent Security / Verifiable Behavior and RL Alignment"
         },
         footer: {
             lastUpdate: "Last Updated"
