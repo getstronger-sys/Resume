@@ -28,8 +28,8 @@ const translations = {
             title: "教育背景",
             university: "北京邮电大学 | 智能科学与技术",
             period: "(2023.09 -- 2027.06)",
-            gpa: "GPA: 3.88/4.0 | 加权平均分: 93.45/100",
-            rank: "专业排名: 1/96（1.0%）",
+            gpa: "GPA: 3.88/4.0 | 加权平均分: 93.44/100",
+            rank: "专业排名: 1/98（1.0%）",
             courses: "优势课程"
         },
         publications: {
@@ -212,6 +212,8 @@ const translations = {
             course16: "数据库系统",
             course17: "操作系统",
             course18: "机器学习",
+            course19: "数据挖掘",
+            course20: "嵌入式系统",
             typeRequired: "必修",
             typeElective: "选修"
         }
@@ -243,8 +245,8 @@ const translations = {
             title: "Education",
             university: "Beijing University of Posts and Telecommunications | Intelligent Science and Technology",
             period: "(2023.09 -- 2027.06)",
-            gpa: "GPA: 3.88/4.0 | Weighted Average: 93.45/100",
-            rank: "Major Rank: 1/96 (1.0%)",
+            gpa: "GPA: 3.88/4.0 | Weighted Average: 93.44/100",
+            rank: "Major Rank: 1/98 (1.0%)",
             courses: "Key Courses"
         },
         publications: {
@@ -427,6 +429,8 @@ const translations = {
             course16: "Database Systems",
             course17: "Operating Systems",
             course18: "Machine Learning",
+            course19: "Data Mining",
+            course20: "Embedded Systems",
             typeRequired: "Required",
             typeElective: "Elective"
         }
