@@ -384,19 +384,25 @@ section h2::after {
 /* 教育背景头部布局 */
 .education-header {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     gap: 30px;
-    margin-bottom: 20px;
+    margin-bottom: 28px;
 }
 
 .education-image {
     flex-shrink: 0;
+    width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .bupt-logo,
 .school-logo {
+    width: 100%;
     max-width: 200px;
     height: auto;
+    object-fit: contain;
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
@@ -408,13 +414,15 @@ section h2::after {
 }
 
 .tsinghua-logo {
-    max-width: 360px;
+    max-width: 200px;
     background: #fff;
-    padding: 8px 12px;
+    padding: 6px 8px;
+    box-sizing: border-box;
 }
 
 .education-info {
     flex: 1;
+    min-width: 0;
 }
 
 .education-info p {
@@ -454,13 +462,17 @@ section h2::after {
         align-items: center;
     }
     
+    .education-image {
+        width: 150px;
+    }
+
     .bupt-logo,
     .school-logo {
         max-width: 150px;
     }
 
     .tsinghua-logo {
-        max-width: 260px;
+        max-width: 150px;
     }
     
     .project-title-with-btn {

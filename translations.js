@@ -29,7 +29,7 @@ const translations = {
             tsinghua: {
                 university: "清华大学 | 软件学院",
                 period: "(2027.09 -- )",
-                degree: "硕士研究生（已录取）"
+                degree: "硕士研究生"
             },
             university: "北京邮电大学 | 智能科学与技术",
             period: "(2023.09 -- 2027.06)",
@@ -251,7 +251,7 @@ const translations = {
             tsinghua: {
                 university: "Tsinghua University | School of Software",
                 period: "(2027.09 -- )",
-                degree: "M.S. Student (Admitted)"
+                degree: "M.S. Student"
             },
             university: "Beijing University of Posts and Telecommunications | Intelligent Science and Technology",
             period: "(2023.09 -- 2027.06)",
