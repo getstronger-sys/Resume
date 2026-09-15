@@ -52,7 +52,7 @@ const translations = {
                     desc2: "个人贡献：作为<strong>第一作者</strong>，负责多类代码生成数据集构建与清洗；基于 Meta-Llama-3-8B 的 LLM2Vec 构建编码器，完成监督对比学习与 M 类分类器训练；提取并量化代码风格特征，包括变量命名、注释使用等结构化模式，分析模型差异；绘制科研图表并可视化实验结果；完成论文撰写及实验附录整理。"
                 },
                 project2: {
-                    title: "[2] SAT4RIDS: Self-Supervised Learning Adversarial Training Framework for Robust Network Intrusion Detection System（Manuscript prepared）",
+                    title: "[2] SAT4RIDS: Self-Supervised Learning Adversarial Training Framework for Robust Network Intrusion Detection System（Accepted by ICIC 2026）",
                     desc1: "项目描述: 网络入侵检测中的异常流量识别长期面临对抗样本下鲁棒性不足的问题。本研究提出自监督 + 对抗训练结合的网络入侵检测框架，将对抗样本生成融入自监督学习。在CICIoT2022与ISCXVPN2016数据集上性能优异，原始样本准确率达到 99.86%，对抗样本准确率为 87.53%。",
                     desc2: "个人贡献：作为<strong>第一作者</strong>，负责自监督特征学习框架设计，并引入对抗训练机制以提升模型鲁棒性；分析原始与对抗样本的性能差异并量化结果；完成论文撰写并绘制科研图表，呈现模型鲁棒性提升效果。"
                 }
@@ -269,7 +269,7 @@ const translations = {
                     desc2: "My Contribution: As <strong>first author</strong>, I was responsible for multi-class code generation dataset construction and cleaning; built the LLM2Vec encoder based on Meta-Llama-3-8B, completed supervised contrastive learning and M-class classifier training; extracted and quantified code style features including variable naming, comment usage, and other structured patterns, analyzing model differences; drew research figures and visualized experimental results; completed paper writing and experimental appendix organization."
                 },
                 project2: {
-                    title: "[2] SAT4RIDS: Self-Supervised Learning Adversarial Training Framework for Robust Network Intrusion Detection System (Manuscript prepared)",
+                    title: "[2] SAT4RIDS: Self-Supervised Learning Adversarial Training Framework for Robust Network Intrusion Detection System (Accepted by ICIC 2026)",
                     desc1: "Project Description: Abnormal traffic identification in network intrusion detection has long faced insufficient robustness against adversarial samples. This research proposes a self-supervised + adversarial training network intrusion detection framework that integrates adversarial sample generation into self-supervised learning. The method achieves excellent performance on CICIoT2022 and ISCXVPN2016 datasets, with 99.86% accuracy on original samples and 87.53% on adversarial samples.",
                     desc2: "My Contribution: As <strong>first author</strong>, I was responsible for designing the self-supervised feature learning framework and introducing adversarial training mechanisms to improve model robustness; analyzed and quantified performance differences between original and adversarial samples; completed paper writing and drew research figures to present the model's robustness improvement."
                 }
