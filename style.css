@@ -393,7 +393,8 @@ section h2::after {
     flex-shrink: 0;
 }
 
-.bupt-logo {
+.bupt-logo,
+.school-logo {
     max-width: 200px;
     height: auto;
     border-radius: 10px;
@@ -401,8 +402,15 @@ section h2::after {
     transition: transform 0.3s ease;
 }
 
-.bupt-logo:hover {
+.bupt-logo:hover,
+.school-logo:hover {
     transform: scale(1.05);
+}
+
+.tsinghua-logo {
+    max-width: 360px;
+    background: #fff;
+    padding: 8px 12px;
 }
 
 .education-info {
@@ -446,8 +454,13 @@ section h2::after {
         align-items: center;
     }
     
-    .bupt-logo {
+    .bupt-logo,
+    .school-logo {
         max-width: 150px;
+    }
+
+    .tsinghua-logo {
+        max-width: 260px;
     }
     
     .project-title-with-btn {
